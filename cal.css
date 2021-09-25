@@ -1,0 +1,9 @@
+td.cell {
+    border-bottom: 2px solid #999;
+}
+hr {
+  border: 1px dashed #999;  
+}
+table {
+  font-family: "Lucida Console", "Courier New", monospace;
+}
