@@ -45,8 +45,8 @@ for (let i = 0; i < 16; i++) {
     cell2.setAttribute("width", "39%");
     row.appendChild(cell1);
     row.appendChild(cell2);
-    cell4.innerHTML = formatDates(leftDate);
     cell3.innerHTML = "<hr>";
+    cell4.innerHTML = formatDates(rightDate);
     cell3.setAttribute("class", "cell");
     cell4.setAttribute("class", "cell");
     rightDate.setDate(rightDate.getDate() + 1);
