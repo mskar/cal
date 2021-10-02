@@ -2,7 +2,7 @@ let table = document.getElementById('myTable');
 let leftDate = new Date(document.getElementById("leftDate").value);
 let rightDate = new Date(document.getElementById("rightDate").value);
 
-function ISO8601_week_no(dt) {
+function getWeekNumber(dt) {
     let tdt = new Date(dt.valueOf());
     let dayn = (dt.getDay() + 7) % 7;
     tdt.setDate(tdt.getDate() - dayn + 3);
@@ -16,10 +16,11 @@ function ISO8601_week_no(dt) {
 
 function formatDates(dt) {
     const isoDate = dt.toISOString().substring(0, 10);
+    const weekNumber = getWeekNumber(dt)
     const weekDate = `${
         dt.getFullYear()
     }-W${
-        ISO8601_week_no(dt)
+        weekNumber
     }-${
         (dt.getDay() + 1)
     }`;
