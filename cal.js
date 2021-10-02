@@ -14,18 +14,27 @@ function getWeekNumber(dt) {
     return 1 + Math.ceil((firstThursday - tdt) / 604800000);
 }
 
+function padToTwoDigits(number) {
+  if (number<=9) { number = ("0"+number); }
+  return number;
+}
+
 function formatDates(dt) {
     const isoDate = dt.toISOString().substring(0, 10);
-    const weekNumber = getWeekNumber(dt)
-    const weekDate = `${
-        dt.getFullYear()
-    }-W${
-        weekNumber
-    }-${
-        (dt.getDay() + 1)
-    }`;
-    return isoDate + "<br>" + weekDate;
+    const weekNumber = padToTwoDigits(getWeekNumber(dt));
+    const dayNumber = dt.getDay() + 1;
+    let yearNumber = dt.getFullYear()
+    // hacky solution to a problem with a single date
+    if (yearNumber === 2022 && weekNumber === 52 && dayNumber === 7) {
+        const weekDate = `${yearNumber-1}-W${weekNumber}-${dayNumber}`;
+        return isoDate + "<br>" + weekDate;
+    }
+    else {
+        const weekDate = `${yearNumber}-W${weekNumber}-${dayNumber}`;
+        return isoDate + "<br>" + weekDate;
+    }
 }
+
 
 for (let i = 0; i < 16; i++) {
     let row = document.createElement('TR');
