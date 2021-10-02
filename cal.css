@@ -2,6 +2,10 @@ td.cell {
     border-bottom: 2px solid #999;
 }
 
+td.blank {
+    color: white;
+}
+
 hr {
     border: 1px dashed #999;
 }
