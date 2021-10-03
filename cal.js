@@ -24,15 +24,8 @@ function formatDates(dt) {
     const weekNumber = padToTwoDigits(getWeekNumber(dt));
     const dayNumber = dt.getDay() + 1;
     let yearNumber = dt.getFullYear()
-    // hacky solution to a problem with a single date
-    if (yearNumber === 2022 && weekNumber === 52 && dayNumber === 7) {
-        const weekDate = `${yearNumber-1}-W${weekNumber}-${dayNumber}`;
-        return isoDate + "<br>" + weekDate;
-    }
-    else {
-        const weekDate = `${yearNumber}-W${weekNumber}-${dayNumber}`;
-        return isoDate + "<br>" + weekDate;
-    }
+    const weekDate = `${yearNumber}-W${weekNumber}-${dayNumber}`;
+    return isoDate + "<br>" + weekDate;
 }
 
 
