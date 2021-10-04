@@ -1,6 +1,6 @@
 @font-face {
-  font-family: azeret;
-  src: url(https://github.com/displaay/Azeret/raw/main/fonts/ttf/AzeretMono-Thin.ttf);
+  font-family: isosevcal;
+  src: url(iosevcal-extended.ttf);
 }
 
 td.cell {
@@ -16,7 +16,7 @@ hr {
 }
 
 table {
-    font-family: 'azeret', monospace;
+    font-family: 'isosevcal', monospace;
     margin-left: auto;
     margin-right: auto;
 }
