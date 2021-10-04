@@ -45,7 +45,7 @@ for (let i = 0; i < 16; i++) {
         cell2.setAttribute("class", "blank");
         cell2.innerHTML = "";
     }
-    cell2.setAttribute("width", "39%");
+    cell2.setAttribute("width", "40%");
     row.appendChild(cell1);
     row.appendChild(cell2);
     cell3.innerHTML = "<hr>";
@@ -58,7 +58,7 @@ for (let i = 0; i < 16; i++) {
         cell3.innerHTML = "";
         cell4.setAttribute("class", "blank");
     }
-    cell3.setAttribute("width", "39%");
+    cell3.setAttribute("width", "40%");
     row.appendChild(cell3);
     row.appendChild(cell4);
     table.tBodies[0].appendChild(row);

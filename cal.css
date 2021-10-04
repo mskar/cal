@@ -4,7 +4,7 @@
 }
 
 td.cell {
-    border-bottom: 2px solid #999;
+    border-bottom: 1px solid #999;
 }
 
 td.blank {
@@ -25,4 +25,8 @@ table {
     @page {
         size: landscape
     }
+}
+
+br {
+    line-height: 21px;
 }
