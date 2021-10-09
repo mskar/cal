@@ -20,11 +20,10 @@ function padToTwoDigits(number) {
 }
 
 function formatDates(dt) {
-    const isoDate = dt.toISOString().substring(0, 10);
+    const isoDate = dt.toISOString().substring(5, 10);
     const weekNumber = padToTwoDigits(getWeekNumber(dt));
     const dayNumber = dt.getDay() + 1;
-    let yearNumber = dt.getFullYear()
-    const weekDate = `${yearNumber}-W${weekNumber}-${dayNumber}`;
+    const weekDate = `W${weekNumber}-${dayNumber}`;
     return isoDate + "<br>" + weekDate;
 }
 
@@ -45,7 +44,7 @@ for (let i = 0; i < 16; i++) {
         cell2.setAttribute("class", "blank");
         cell2.innerHTML = "";
     }
-    cell2.setAttribute("width", "40%");
+    cell2.setAttribute("width", "45%");
     row.appendChild(cell1);
     row.appendChild(cell2);
     cell3.innerHTML = "<hr>";
@@ -58,7 +57,7 @@ for (let i = 0; i < 16; i++) {
         cell3.innerHTML = "";
         cell4.setAttribute("class", "blank");
     }
-    cell3.setAttribute("width", "40%");
+    cell3.setAttribute("width", "45%");
     row.appendChild(cell3);
     row.appendChild(cell4);
     table.tBodies[0].appendChild(row);
