@@ -1,0 +1,3 @@
+[submodule "aspa"]
+	path = aspa
+	url = https://github.com/abiyani/automate-save-page-as
