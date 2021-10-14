@@ -7,10 +7,6 @@ td.cell {
     border-bottom: 1px solid #999;
 }
 
-td.blank {
-    color: #ffffff00;
-}
-
 hr {
     border: 1px dashed #999;
 }

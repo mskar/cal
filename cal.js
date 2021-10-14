@@ -48,15 +48,16 @@ for (let i = 0; i < 16; i++) {
     row.appendChild(cell1);
     row.appendChild(cell2);
     cell3.innerHTML = "<hr>";
-    cell4.innerHTML = formatDates(rightDate);
+    if (rightDate.toISOString().substring(5, 10) !== "01-01") {
+        cell4.innerHTML = formatDates(rightDate);
+    }
+    else {
+        cell4.innerHTML = (rightDate.getFullYear() + 1) + "-<br>" + rightDate.toISOString().substring(5, 10);
+    }
+
     cell3.setAttribute("class", "cell");
     cell4.setAttribute("class", "cell");
     rightDate.setDate(rightDate.getDate() + 1);
-    if (rightDate.getFullYear() === 0) {
-        cell3.setAttribute("class", "blank");
-        cell3.innerHTML = "";
-        cell4.setAttribute("class", "blank");
-    }
     cell3.setAttribute("width", "46%");
     row.appendChild(cell3);
     row.appendChild(cell4);
