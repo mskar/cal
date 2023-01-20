@@ -1,69 +1,23 @@
 @font-face {
-  font-family: isosevcal;
-  src: url(iosevcal-regular.ttf);
-}
-
-#cell {
-    border-bottom: 1px solid #999;
-}
-
-hr {
-    border: 1px dashed #999;
+    font-family: isosevcal;
+    src: url(iosevcal-regular.ttf);
 }
 
 day {
+    border: solid 1px black;
+    display: grid;
     font-family: 'isosevcal', monospace;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15px;
-    display: flex;
-    border: 1px solid #999;
+    grid-template-columns: 11ch 1fr;
 }
 
-left {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #999;
+text {
+    text-align: right;
 }
 
-lefttop {
-    display: flex;
-    flex-direction: column;
-    width: 10ch;
+dashed {
+    border-bottom: dashed 1px black;
 }
 
-leftbtm {
-    display: flex;
-    flex-direction: column;
-    width: 11ch;
-    align-items: flex-end;
-}
-
-right {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 3;
-}
-
-date {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-
-time {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-@media print {
-    @page {
-        size: landscape
-    }
-}
-
-br {
-    line-height: 22px;
+solid {
+    border-bottom: solid 1px black;
 }
