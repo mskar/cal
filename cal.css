@@ -10,7 +10,7 @@ day {
     grid-template-columns: 11ch 1fr;
 }
 
-text {
+date, time {
     text-align: right;
 }
 
