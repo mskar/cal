@@ -12,15 +12,15 @@ class Calendar:
         self.name = f"{self.dates[0].isoformat()}_{self.dates[-1].isoformat()}"
         self.head = (
             "<!DOCTYPE html>\n<html>\n\n<head>\n\t"
-            '<link rel="stylesheet" href="../cal.css">\n'
+            '<link rel="stylesheet" href="cal.css">\n'
             "</head>\n\n<body>\n\t<main>\n\t\t"
         )
         self.foot = "\t</main>\n</body>\n\n</html>"
         self.body = "".join([
                     "<day>\n\t\t\t"
-                    f"<date>{d.isoformat()}&nbsp;</date>\n\t\t\t"
+                    f"<date>{d.isoformat()}&nbsp&nbsp;</date>\n\t\t\t"
                     "<blank></blank>\n\t\t\t"
-                    f"<date>W{d.strftime('%V-%u')}&nbsp;</date>\n\t\t\t"
+                    f"<date>W{d.strftime('%V-%u')}&nbsp&nbsp;</date>\n\t\t\t"
                     "<blank></blank>\n\t\t\t"
                     f"<date>{d.strftime('%j')}.000</date>\n\t\t\t"
                     "<dashed></dashed>\n\t\t\t"
