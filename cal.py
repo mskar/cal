@@ -71,20 +71,19 @@ class Calendar:
         return self
 
     def write_dates(self):
-        for eight_weeks in zip(*[iter(self.weeks)] * 8):
-            days = [d for w in eight_weeks for d in w]
-            html = (
-                "<dates>\n\t\t\t"
-                + "".join(
-                    [
-                        f"<date>{d.isoformat()}</date>\n\t\t\t"
-                        f"<date>{d.strftime('%Y-W%V-%u')}</date>\n\t\t\t"
-                        f"<date>{d.strftime('%Y-%j')}</date>\n\t\t\t"
-                        f"{'<solid></solid>' if i % 2 else '<dashed></dashed>'}\n\t\t\t"
-                        for (i, d) in enumerate(days)
-                    ]
-                )
-                + "</dates>\n\t\t"
+        for three_weeks in zip(*[iter(self.weeks)] * 3):
+            days = [d for w in three_weeks for d in w]
+            html = "".join(
+                [
+                    "<day>\n\t\t\t"
+                    f"<date>{d.isoformat()}&nbsp&nbsp;</date>\n\t\t\t"
+                    "<dashed></dashed>\n\t\t\t"
+                    f"<date>W{d.strftime('%V-%u')}&nbsp&nbsp;</date>\n\t\t\t"
+                    "<dashed></dashed>\n\t\t\t"
+                    f"<date>{d.strftime('%j')}&nbsp&nbsp&nbsp&nbsp;</date>\n\t\t\t"
+                    "</day>\n\t\t"
+                    for d in days
+                ]
             )
             pathlib.Path(
                 f"{days[0].isoformat()}_{days[-1].isoformat()}.html"
