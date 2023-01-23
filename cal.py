@@ -1,6 +1,5 @@
 import calendar
 import datetime
-import itertools
 import pathlib
 import re
 
@@ -63,7 +62,7 @@ class Calendar:
         return self
 
     def write_dates(self):
-        for month in self.months:
+        for five_weeks in list(zip(*[iter(self.month_dates)] * 35)):
             html = "".join(
                 [
                     "<day>\n\t\t\t"
@@ -71,11 +70,11 @@ class Calendar:
                     "<dashed></dashed>\n\t\t\t"
                     f"<date>W{d.strftime('%V-%u')}&nbsp&nbsp;</date>\n\t\t\t"
                     "</day>\n\t\t"
-                    for d in month
+                    for d in five_weeks
                 ]
             )
             pathlib.Path(
-                f"{month[0].isoformat()}_{month[-1].isoformat()}_month.html"
+                f"{five_weeks[0].isoformat()}_{five_weeks[-1].isoformat()}_month.html"
             ).write_text(self.__head + html + self.__foot)
         return self
 
@@ -108,14 +107,5 @@ class Calendar:
 
 if __name__ == "__main__":
     cal = Calendar("2023-01-23")
-    cal.year_months
     cal.write_times()
     cal.write_dates()
-    len(list(zip(*cal.monthdates)))
-    cal.monthdates
-    # Generate html files for each week in 2023
-    start = datetime.date.fromisoformat("2023-01-23")
-    dates = [start] + [start + datetime.timedelta(days=7 * n) for n in range(50)]
-    dates
-    cals = [Calendar(d.isoformat()).write_file() for d in dates]
-    cals
