@@ -3,6 +3,12 @@
     src: url(iosevcal-regular.ttf);
 }
 
+dates {
+    display: grid;
+    font-family: 'isosevcal', monospace;
+    grid-template-columns: 12ch 12ch 10ch 1fr;
+}
+
 day {
     border-bottom: solid 1px black;
     display: grid;
