@@ -12,18 +12,10 @@ class Calendar:
             for d in range(n_days)
         ]
         self.year_months = sorted(list(set((d.year, d.month) for d in self.dates)))
-        self.month_dates = sorted(
-            list(
-                set(
-                    d
-                    for m in [
-                        list(calendar.Calendar().itermonthdates(*ym))
-                        for ym in self.year_months
-                    ]
-                    for d in m
-                )
-            )
-        )
+        self.months = [
+            list(calendar.Calendar().itermonthdates(*ym)) for ym in self.year_months
+        ]
+        self.month_dates = sorted(list(set(d for m in self.months for d in m)))
         self.weeks = list(zip(*[iter(self.month_dates)] * 7))
         self.__head = (
             "<!DOCTYPE html>\n<html>\n\n<head>\n\t"
@@ -66,27 +58,24 @@ class Calendar:
                 ]
             )
             pathlib.Path(
-                f"{week[0].isoformat()}_{week[-1].isoformat()}.html"
+                f"{week[0].isoformat()}_{week[-1].isoformat()}_week.html"
             ).write_text(self.__head + html + self.__foot)
         return self
 
     def write_dates(self):
-        for three_weeks in zip(*[iter(self.weeks)] * 3):
-            days = [d for w in three_weeks for d in w]
+        for month in self.months:
             html = "".join(
                 [
                     "<day>\n\t\t\t"
                     f"<date>{d.isoformat()}&nbsp&nbsp;</date>\n\t\t\t"
                     "<dashed></dashed>\n\t\t\t"
                     f"<date>W{d.strftime('%V-%u')}&nbsp&nbsp;</date>\n\t\t\t"
-                    "<dashed></dashed>\n\t\t\t"
-                    f"<date>{d.strftime('%j')}&nbsp&nbsp&nbsp&nbsp;</date>\n\t\t\t"
                     "</day>\n\t\t"
-                    for d in days
+                    for d in month
                 ]
             )
             pathlib.Path(
-                f"{days[0].isoformat()}_{days[-1].isoformat()}.html"
+                f"{month[0].isoformat()}_{month[-1].isoformat()}_month.html"
             ).write_text(self.__head + html + self.__foot)
         return self
 
