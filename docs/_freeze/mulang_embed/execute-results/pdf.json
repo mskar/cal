@@ -1,0 +1,14 @@
+{
+  "hash": "b005f14bb3f3c0ebac2a4022738a2ab3",
+  "result": {
+    "markdown": "---\ntitle: \"mulang\"\n---\n\n\n\n\n## Quarto\n\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.\n\n## Running Code\n\nQuarto files using the jupyter engine cannot mix languages.\n1. Create one Quarto file for each language and one `main.qmd`:\n  - `main.qmd`\n    - does not have any code chunks, only prose and embed shortcodes\n    - has the engine option set to knitr in its YAML header\n  - the other Quarto files\n    - do not have any prose, only code\n    - have the YAML header engine option set to jupyter and the relevant language\n2. Create Jupyter notebooks from the Quarto files \n3. Keep them all in sync with one of the following options\n  a. Convert the Quarto files into Jupyter notebooks and work in the notebooks\n  b. Output the Quarto files to Jupyter notebooks\n3. Embed cells from the Jupyter notebooks in `main.qmd`\n4. Generate all output files from `main.qmd`\n\n1. Set the engine option to knitr in the main Quarto file YAML header\n2. Use Python, R, and bash code in their respective chunks\n3. Eventually move code into scripts and Jupyter notebooks to keep the quarto file small\n  a. Julia code must be in Jupyter notebooks\n  b. Embed cells from the Jupyter notebooks in the Quarto file\n  c. Bring in scripts with the file chunk option\nKeep Python, R, and Julia code in separate scripts\n1. Keep Python, R, and Julia code in separate scripts\n2. Use Quarto notebooks that are sync'ed to Jupyter Notebooks with the correct kernel setting.\n2. Embed cells from those notebooks in a combined Quarto notebook\nUse Jupyter for \n\n<!-- 12A0366C|/Users/maptv/maptv/cal/docs/mulang_embed.qmd|:decalendar_javascript.ipynb#isoo2doty |  | echo:true,warning:false,asis:true,eval:false -->\n\n\n### Another test\n\n<!-- 12A0366C|/Users/maptv/maptv/cal/docs/mulang_embed.qmd|:decalendar_julia.ipynb#isoo2doty |  | echo:true,warning:false,asis:true,eval:false -->\n\n\n### Another test\n\n<!-- 12A0366C|/Users/maptv/maptv/cal/docs/mulang_embed.qmd|:decalendar_javascript.ipynb#date2doty |  | echo:true,warning:false,asis:true,eval:false -->\n\n\n\nTest\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": null,
+    "postProcess": false
+  }
+}
