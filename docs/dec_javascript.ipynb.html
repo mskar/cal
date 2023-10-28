@@ -231,7 +231,7 @@
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2023+240</p>
+      <p class="date">2023+241</p>
     </div>
   </div>
   
@@ -239,7 +239,7 @@
   </div>
   
 
-</header>     <p>| <a href="">Martin Skarzynski</a></p>
+</header>     <p>| <a href="">Martin Laptev</a></p>
 <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
 <section id="day-of-the-year" class="level2" data-number="1.1">
@@ -720,7 +720,7 @@
 </section>
 <section id="year" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="year"><span class="header-section-number">1.2</span> Year</h2>
-<p><code>Doty</code> dates (<code>day</code>) and <a href="https://en.wikipedia.org/wiki/Timestamp#:~:text=A%20timestamp%20is%20a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred%2C%20usually%20giving%20date%20and%20time%20of%20day%2C%20sometimes%20accurate%20to%20a%20small%20fraction%20of%20a%20second.">timestamps</a> (<code>day.stamp</code>) do not include years and thus can be reused from year to year. When a <code>doty</code> is combined with a year, it forms a <code>Decalendar</code> <code>ordinal</code>[1] (<code>deco</code>) and represents a specific date (<code>year+day</code>) or time (<code>year+day.stamp</code>) in a specific year, instead of than a date (<code>day</code>) or time (<code>day.stamp</code>) that occurs every year or every leap year. Using the <a href="https://observablehq.com/about">Observable</a> <a href="https://observablehq.com/@observablehq/input-date#cell-111"><code>datetime</code> input</a> in <a href="#exm-intro-date">Example&nbsp;2</a>, you can select a year, month, <code>dotm</code>, hour, and minute to see the equivalent 1) <code>deco</code> timestamp (<code>year+day.clock</code>) and 2) year date (<code>year.yyy</code>) in <a href="#lst-intro-date">Listing&nbsp;2</a> .</p>
+<p><code>Doty</code> dates (<code>day</code>) and <a href="https://en.wikipedia.org/wiki/Timestamp#:~:text=A%20timestamp%20is%20a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred%2C%20usually%20giving%20date%20and%20time%20of%20day%2C%20sometimes%20accurate%20to%20a%20small%20fraction%20of%20a%20second.">timestamps</a> (<code>day.stamp</code>) do not include years and thus can be reused from year to year. When a <code>doty</code> is combined with a year, it forms a <code>Decalendar</code> <code>ordinal</code>[1] (<code>deco</code>) and represents a specific date (<code>year+day</code>) or time (<code>year+day.stamp</code>) in a specific year, instead of than a date (<code>day</code>) or time (<code>day.stamp</code>) that occurs every year or every leap year. Using the <a href="https://observablehq.com/about">Observable</a> <a href="https://observablehq.com/@observablehq/input-date#cell-111">datetime input</a> in <a href="#exm-intro-date">Example&nbsp;2</a>, you can select a year, month, <code>dotm</code>, hour, and minute to see the equivalent 1) <code>deco</code> timestamp (<code>year+day.clock</code>) and 2) year date (<code>year.yyy</code>) in <a href="#lst-intro-date">Listing&nbsp;2</a>.</p>
 <p><span class="theorem-title"><strong>Example 2 </strong></span>&nbsp;</p>
 <ol type="1">
 <li><span id="ojs-element-id-11"></span></li>
@@ -936,14 +936,14 @@
 <td style="text-align: center;">
 <div class="output display_data" width="50.0%" data-layout-align="center">
 <p>
-<img src="dec_javascript_files/figure-html/49d1e17c-14cb-49a5-9607-86d35cac0fb1-1-dec_files/figure-ipynb/fig-schedules-output-1.png" alt="(a) Proportion of the day spent working and resting every day of the week">
+<img src="dec_javascript_files/figure-html/daa44936-c8fd-4394-920e-cd0e9cc2c75c-1-dec_files/figure-ipynb/fig-schedules-output-1.png" alt="(a) Proportion of the day spent working and resting every day of the week">
 </p>
 </div>
 </td>
 <td style="text-align: center;">
 <div class="output display_data" width="50.0%" data-layout-align="center">
 <p>
-<img src="dec_javascript_files/figure-html/49d1e17c-14cb-49a5-9607-86d35cac0fb1-2-dec_files/figure-ipynb/fig-schedules-output-2.png" alt="(b) Proportion of the day spent working and resting every day of the pent">
+<img src="dec_javascript_files/figure-html/daa44936-c8fd-4394-920e-cd0e9cc2c75c-2-dec_files/figure-ipynb/fig-schedules-output-2.png" alt="(b) Proportion of the day spent working and resting every day of the pent">
 </p>
 </div>
 </td>
@@ -952,10 +952,12 @@
 
 </table>
 <p>Figure&nbsp;2: Weekly schedule and Schedule 3 comparison</p>
-<p><a href="#exm-intro-dek">Example&nbsp;4</a> provides the opportunity to explore all four of the <code>pently</code> schedules. You can select which schedule to view using the <a href="https://observablehq.com/about">Observable</a> <a href="https://observablehq.com/@observablehq/input-radio"><code>radio</code> inputs</a>, use the <a href="https://observablehq.com/@mootari/range-slider">interval sliders</a> to adjust the schedule if desired, and click the <a href="https://observablehq.com/@jeremiak/download-data-button">Download button</a> to obtain the schedule data used to create <a href="#fig-intro-dek">Figure&nbsp;3</a>. To download the schedule data as a <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> file instead of a <a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a>, change the file extension in the filename text input from <code>.csv</code> to <code>.json</code>. <a href="#sec-sched">Section&nbsp;5.4.3</a> provides more information on <code>Schedule</code> <code>3</code> and the other <code>pently</code> schedules.</p>
+<p><a href="#exm-intro-pent">Example&nbsp;4</a> provides the opportunity to explore all four of the <code>pently</code> schedules. You can select which schedule to view using the <a href="https://observablehq.com/about">Observable</a> <a href="https://observablehq.com/@observablehq/input-radio">radio inputs</a>, use the <a href="https://observablehq.com/@mootari/range-slider">interval sliders</a> to adjust the schedule if desired, and click the <a href="https://observablehq.com/@jeremiak/download-data-button">Download button</a> to obtain the schedule data used to create <a href="#fig-intro-dek">Figure&nbsp;3</a>. To download the data as a <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> file instead of a <a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a>, change the file extension in the filename text input from <code>.csv</code> to <code>.json</code>. <a href="#sec-sched">Section&nbsp;5.4.3</a> provides more information on <code>Schedule</code> <code>3</code> and the other <code>pently</code> schedules.</p>
 <p><span class="theorem-title"><strong>Example 4 </strong></span>&nbsp;</p>
 <p>[1] <code>pent</code>: a group of 5 days; half of a <code>dek</code></p>
 <p>[2] <code>pently</code> schedule: one of a set of workday and restday schedules for the 5 days of the <code>pent</code></p>
+<p>Just like <a href="#exm-intro-pent">Example&nbsp;4</a> allows us to select <code>Declock</code> time intervals, we can create <code>Decalendar</code> date intervals in <a href="#exm-intro-dotd">Example&nbsp;5</a>. To select discontinuous intervals, we can use the <code>step</code> input to “step” over <span class="math inline">\(step-1\)</span> dates in the interval. The <code>start:stop</code> and <code>step</code> inputs in <a href="#exm-intro-dotd">Example&nbsp;5</a> enable <a href="https://en.wikipedia.org/wiki/Array_slicing#:~:text=In%20computer%20programming%2C%20array%20slicing%20is%20an%20operation%20that%20extracts%20a%20subset%20of%20elements%20from%20an%20array%20and%20packages%20them%20as%20another%20array">array slicing</a> as in the <a href="https://en.wikipedia.org/wiki/Array_slicing#1991:_Python">Python programming language</a>. In <a href="#fig-intro-dotd">Figure&nbsp;4</a>, <code>deks</code> are in separate rows, the days-of-the-<code>dek</code> are stacked in columns, and each <code>Decalendar</code> date has its own cell. <code>Decalendar</code> dates that are included in the interval are highlighted in orange, and all other <code>Decalendar</code> dates are labeled blue. Try setting a <code>step</code>👣of 10 to select all instances of one of the days-of-the-<code>dek</code>!</p>
+<p><span class="theorem-title"><strong>Example 5 </strong></span></p>
 <section id="dek-observable-code" class="level4">
 <h4 class="anchored" data-anchor-id="dek-observable-code"><code>Dek</code> Observable code</h4>
 <section id="functions-2" class="level5">
@@ -991,7 +993,7 @@
 <span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="vs">  }</span></span>
 <span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a><span class="vs">}</span></span>
 <span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a><span class="vs">#</span><span class="sc">${</span>__ns__<span class="sc">}</span><span class="vs"> .label {</span></span>
-<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a><span class="vs">  width: 60px;</span></span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a><span class="vs">  width: 99px;</span></span>
 <span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="vs">  padding: 5px 0 4px 0;</span></span>
 <span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="vs">  margin-right: .5px;</span></span>
 <span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a><span class="vs">  flex-shrink: 0;</span></span>
@@ -1186,8 +1188,26 @@
 <span id="cb13-221"><a href="#cb13-221" aria-hidden="true" tabindex="-1"></a>    <span class="vs">`Download </span><span class="sc">${</span>filename<span class="sc">}</span><span class="vs"> (~</span><span class="sc">${</span>size<span class="sc">}</span><span class="vs"> KB)`</span></span>
 <span id="cb13-222"><a href="#cb13-222" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
 <span id="cb13-223"><a href="#cb13-223" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> button<span class="op">;</span></span>
-<span id="cb13-224"><a href="#cb13-224" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-224"><a href="#cb13-224" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-225"><a href="#cb13-225" aria-hidden="true" tabindex="-1"></a><span class="co">// https://github.com/hustcc/slice.js/blob/master/src/index.js</span></span>
+<span id="cb13-226"><a href="#cb13-226" aria-hidden="true" tabindex="-1"></a>slice <span class="op">=</span> (v<span class="op">,</span> start<span class="op">,</span> end<span class="op">,</span> step) <span class="kw">=&gt;</span> {</span>
+<span id="cb13-227"><a href="#cb13-227" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> r <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb13-228"><a href="#cb13-228" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> i<span class="op">;</span></span>
+<span id="cb13-229"><a href="#cb13-229" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (step <span class="op">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb13-230"><a href="#cb13-230" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="op">=</span> start<span class="op">;</span> i <span class="op">&lt;</span> end<span class="op">;</span> i <span class="op">+=</span> step) {</span>
+<span id="cb13-231"><a href="#cb13-231" aria-hidden="true" tabindex="-1"></a>      r<span class="op">.</span><span class="fu">push</span>(v[i])<span class="op">;</span></span>
+<span id="cb13-232"><a href="#cb13-232" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb13-233"><a href="#cb13-233" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb13-234"><a href="#cb13-234" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="op">=</span> start<span class="op">;</span> i <span class="op">&gt;</span> end<span class="op">;</span> i <span class="op">+=</span> step) {</span>
+<span id="cb13-235"><a href="#cb13-235" aria-hidden="true" tabindex="-1"></a>      r<span class="op">.</span><span class="fu">push</span>(v[i])<span class="op">;</span></span>
+<span id="cb13-236"><a href="#cb13-236" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb13-237"><a href="#cb13-237" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb13-238"><a href="#cb13-238" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> r<span class="op">;</span></span>
+<span id="cb13-239"><a href="#cb13-239" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-display">
+
+</div>
 <div class="cell-output cell-output-display">
 
 </div>
@@ -1310,8 +1330,12 @@
 <span id="cb14-95"><a href="#cb14-95" aria-hidden="true" tabindex="-1"></a>  [[<span class="op">.</span><span class="dv">3</span><span class="op">,</span> <span class="op">.</span><span class="dv">7</span>]<span class="op">,</span> [<span class="op">.</span><span class="dv">3</span><span class="op">,</span> <span class="op">.</span><span class="dv">7</span>]<span class="op">,</span> [<span class="op">.</span><span class="dv">3</span><span class="op">,</span> <span class="op">.</span><span class="dv">7</span>]<span class="op">,</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>]<span class="op">,</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>]]<span class="op">,</span></span>
 <span id="cb14-96"><a href="#cb14-96" aria-hidden="true" tabindex="-1"></a>  [[<span class="op">.</span><span class="dv">35</span><span class="op">,</span> <span class="op">.</span><span class="dv">65</span>]<span class="op">,</span> [<span class="op">.</span><span class="dv">35</span><span class="op">,</span> <span class="op">.</span><span class="dv">65</span>]<span class="op">,</span> [<span class="op">.</span><span class="dv">35</span><span class="op">,</span> <span class="op">.</span><span class="dv">65</span>]<span class="op">,</span> [<span class="op">.</span><span class="dv">35</span><span class="op">,</span> <span class="op">.</span><span class="dv">65</span>]<span class="op">,</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>]]<span class="op">,</span></span>
 <span id="cb14-97"><a href="#cb14-97" aria-hidden="true" tabindex="-1"></a>  [[<span class="op">.</span><span class="dv">38</span><span class="op">,</span> <span class="op">.</span><span class="dv">62</span>]<span class="op">,</span> [<span class="op">.</span><span class="dv">38</span><span class="op">,</span> <span class="op">.</span><span class="dv">62</span>]<span class="op">,</span> [<span class="op">.</span><span class="dv">38</span><span class="op">,</span> <span class="op">.</span><span class="dv">62</span>]<span class="op">,</span> [<span class="op">.</span><span class="dv">38</span><span class="op">,</span> <span class="op">.</span><span class="dv">62</span>]<span class="op">,</span> [<span class="op">.</span><span class="dv">38</span><span class="op">,</span> <span class="op">.</span><span class="dv">62</span>]]<span class="op">,</span></span>
-<span id="cb14-98"><a href="#cb14-98" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-98"><a href="#cb14-98" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb14-99"><a href="#cb14-99" aria-hidden="true" tabindex="-1"></a>dates <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> <span class="dv">366</span>}<span class="op">,</span> (_<span class="op">,</span> i) <span class="kw">=&gt;</span> i<span class="op">.</span><span class="fu">toString</span>()<span class="op">.</span><span class="fu">padStart</span>(<span class="dv">3</span><span class="op">,</span> <span class="st">"0"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-display">
+
+</div>
 <div class="cell-output cell-output-display">
 
 </div>
@@ -2922,8 +2946,8 @@
 </section>
 <section id="gregorian-calendar-date-conversion" class="level3 page-columns page-full" data-number="4.3.2">
 <h3 data-number="4.3.2" class="anchored" data-anchor-id="gregorian-calendar-date-conversion"><span class="header-section-number">4.3.2</span> Gregorian calendar date conversion</h3>
-<p>In addition to using a conversion table like <a href="#tbl-greg2doty">Table&nbsp;5</a>, we can convert between Gregorian calendar dates and <code>Decalendar</code> <code>doty</code> dates programmatically. The code in <a href="#exm-coor">Example&nbsp;5</a> is derived from the <a href="http://howardhinnant.github.io/date_algorithms.html#days_from_civil"><code>days_from_civil</code></a> and <a href="http://howardhinnant.github.io/date_algorithms.html#civil_from_days"><code>civil_from_days</code></a> algorithms described by <a href="https://howardhinnant.github.io/">Howard Hinnant</a> in <a href="http://howardhinnant.github.io/date_algorithms.html"><em>chrono-Compatible Low-Level Date Algorithms</em></a> [-<span class="citation" data-cites="hinnant2014">Hinnant (<a href="#ref-hinnant2014" role="doc-biblioref">2014</a>)</span>]. The output of the <code>greg2doty</code> function is a <code>doty</code>, while its inverse function, <code>doty2greg</code>, returns an array containing a month and a <code>dotm</code> number.</p>
-<p><span class="theorem-title"><strong>Example 5 </strong></span>&nbsp;</p>
+<p>In addition to using a conversion table like <a href="#tbl-greg2doty">Table&nbsp;5</a>, we can convert between Gregorian calendar dates and <code>Decalendar</code> <code>doty</code> dates programmatically. The code in <a href="#exm-coor">Example&nbsp;6</a> is derived from the <a href="http://howardhinnant.github.io/date_algorithms.html#days_from_civil"><code>days_from_civil</code></a> and <a href="http://howardhinnant.github.io/date_algorithms.html#civil_from_days"><code>civil_from_days</code></a> algorithms described by <a href="https://howardhinnant.github.io/">Howard Hinnant</a> in <a href="http://howardhinnant.github.io/date_algorithms.html"><em>chrono-Compatible Low-Level Date Algorithms</em></a> [-<span class="citation" data-cites="hinnant2014">Hinnant (<a href="#ref-hinnant2014" role="doc-biblioref">2014</a>)</span>]. The output of the <code>greg2doty</code> function is a <code>doty</code>, while its inverse function, <code>doty2greg</code>, returns an array containing a month and a <code>dotm</code> number.</p>
+<p><span class="theorem-title"><strong>Example 6 </strong></span>&nbsp;</p>
 <section id="javascript" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="javascript">JavaScript</h4>
 <section id="greg2doty" class="level5 page-columns page-full">
@@ -3028,7 +3052,7 @@ doty2greg()</code></pre>
 </section>
 <section id="gregorian-calendar-months-and-years" class="level3 page-columns page-full" data-number="4.3.3">
 <h3 data-number="4.3.3" class="anchored" data-anchor-id="gregorian-calendar-months-and-years"><span class="header-section-number">4.3.3</span> Gregorian calendar months and years</h3>
-<p><code>Decalendar</code> only uses months for converting to and from Gregorian calendar dates. Nevertheless, discussing months can help to explain how <code>Decalendar</code> works. The <code>Decalendar</code> year ends with January and February, as shown in <a href="#tbl-gregm">Table&nbsp;7</a>. During these two months, the <code>Decalendar</code> year is 1 less than the Gregorian calendar year. To obtain a <code>Decalendar</code> year (<code>dy</code>) from a Gregorian calendar year (<code>gy</code>) and month number (<code>gm</code>), we subtract 1 from <code>gy</code> if <code>gm</code> is less than 3 (<span class="math inline">\(dy = gy - [gm &lt; 3]\)</span>). To obtain a Gregorian calendar year (<code>gy</code>) from a <code>Decalendar</code> year (<code>dy</code>) and <code>doty</code>, we add 1 to <code>dy</code> if <code>doty</code> is greater than 305 (<span class="math inline">\(gy = dy + [dm &gt; 305]\)</span>). Code to convert between <code>Decalendar</code> and Gregorian calendar years is provided in <a href="#exm-gregm">Example&nbsp;6</a>.</p>
+<p><code>Decalendar</code> only uses months for converting to and from Gregorian calendar dates. Nevertheless, discussing months can help to explain how <code>Decalendar</code> works. The <code>Decalendar</code> year ends with January and February, as shown in <a href="#tbl-gregm">Table&nbsp;7</a>. During these two months, the <code>Decalendar</code> year is 1 less than the Gregorian calendar year. To obtain a <code>Decalendar</code> year (<code>dy</code>) from a Gregorian calendar year (<code>gy</code>) and month number (<code>gm</code>), we subtract 1 from <code>gy</code> if <code>gm</code> is less than 3 (<span class="math inline">\(dy = gy - [gm &lt; 3]\)</span>). To obtain a Gregorian calendar year (<code>gy</code>) from a <code>Decalendar</code> year (<code>dy</code>) and <code>doty</code>, we add 1 to <code>dy</code> if <code>doty</code> is greater than 305 (<span class="math inline">\(gy = dy + [dm &gt; 305]\)</span>). Code to convert between <code>Decalendar</code> and Gregorian calendar years is provided in <a href="#exm-gregm">Example&nbsp;7</a>.</p>
 <section id="table-7" class="level4">
 <h4 class="anchored" data-anchor-id="table-7"><a href="#tbl-gregm">Table&nbsp;7</a></h4>
 <blockquote class="blockquote">
@@ -3106,7 +3130,7 @@ doty2greg()</code></pre>
 </table>
 <p>Table&nbsp;7: The numeric values of months in <code>Decalendar</code> and the Gregorian calendar</p>
 </blockquote>
-<p><span class="theorem-title"><strong>Example 6 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 7 </strong></span>&nbsp;</p>
 </section>
 <section id="javascript-1" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="javascript-1">JavaScript</h4>
@@ -3204,10 +3228,10 @@ doty2year()</code></pre>
 </section>
 <section id="leap-years" class="level3 page-columns page-full" data-number="4.3.4">
 <h3 data-number="4.3.4" class="anchored" data-anchor-id="leap-years"><span class="header-section-number">4.3.4</span> Leap years</h3>
-<p>A leap year has 366 days in both <code>Decalendar</code> and the Gregorian calendar. <code>Day</code> <code>365</code> is Leap Day in <code>Decalendar</code> and is synonymous with February 29, the Gregorian calendar leap day. <code>Decalendar</code> positions Leap Day, <code>Day</code> <code>365</code>, at the end of the year, which requires an adjustment of the Gregorian calendar definition of a leap year. To check if a <code>Decalendar</code> year is a leap, we must first add 1 to the year before plugging it into <a href="#eq-gregl">Equation&nbsp;1</a> or the <a href="http://howardhinnant.github.io/date_algorithms.html#is_leap"><code>year2bool</code></a> function in <a href="#exm-gregl">Example&nbsp;7</a>.</p>
+<p>A leap year has 366 days in both <code>Decalendar</code> and the Gregorian calendar. <code>Day</code> <code>365</code> is Leap Day in <code>Decalendar</code> and is synonymous with February 29, the Gregorian calendar leap day. <code>Decalendar</code> positions Leap Day, <code>Day</code> <code>365</code>, at the end of the year, which requires an adjustment of the Gregorian calendar definition of a leap year. To check if a <code>Decalendar</code> year is a leap, we must first add 1 to the year before plugging it into <a href="#eq-gregl">Equation&nbsp;1</a> or the <a href="http://howardhinnant.github.io/date_algorithms.html#is_leap"><code>year2bool</code></a> function in <a href="#exm-gregl">Example&nbsp;8</a>.</p>
 <p>Interestingly, years from negative <code>deco</code> dates do not need any adjustment. The first day of <code>Year</code> <code>1999</code> is <code>1999+000</code> or <code>2000-366</code>, while the last day is <code>1999+365</code> or <code>2000-001</code>. <code>Year</code> <code>1999</code> is a leap year from the perspective of the positive <code>deco</code> dates, <code>1999+000</code> and <code>1999+365</code>, because it goes from <code>Day</code> <code>0</code> to <code>Day</code> <code>365</code>. In the context of the negative <code>deco</code> dates,<code>2000-366</code> and <code>2000-001</code>, <code>Year</code> <code>2000</code> is a leap year because it goes from <code>Day</code> <code>-366</code> to <code>Day</code> <code>-1</code>.</p>
 <p><span id="eq-gregl"><span class="math display">\[y \mod 4 = 0 \land year \mod 100 \neq 0 \lor year \mod 400 = 0 \qquad(1)\]</span></span></p>
-<p><span class="theorem-title"><strong>Example 7 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 8 </strong></span>&nbsp;</p>
 <section id="javascript-2" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="javascript-2">JavaScript</h4>
 <section id="leap" class="level5 page-columns page-full">
@@ -3273,11 +3297,11 @@ year2bool()</code></pre>
 </section>
 <section id="ordinal-dates" class="level3 page-columns page-full" data-number="4.4.2">
 <h3 data-number="4.4.2" class="anchored" data-anchor-id="ordinal-dates"><span class="header-section-number">4.4.2</span> Ordinal dates</h3>
-<p><code>Deco</code> dates (<code>year+day</code>) are very similar to <a href="https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates">ISO 8601 ordinal (<code>isoo</code>) dates</a> (<code>year-day</code>). Like <code>Decalendar</code> <code>doties</code>, <code>isoo</code> dates count the number of days since the start of the year. Unlike ordinal dates, <code>doties</code> are <a href="https://en.wikipedia.org/wiki/Zero-based_numbering">zero-based</a> and do not differ across common and leap years. The <code>deco</code> date can be easily obtained from the <code>isoo</code> date using the calculations shown in <a href="#eq-isoo1">Equation&nbsp;2</a>, <a href="#eq-isoo2">Equation&nbsp;3</a>, and <a href="#exm-isoo">Example&nbsp;8</a>. These calculation shift the <code>isoo</code> date by 60 or 61 days to account for the 2-month difference between <code>Decalendar</code> and the Gregorian calendar.</p>
-<p>In <a href="#exm-isoo">Example&nbsp;8</a>, the <code>isoo2doty</code> and <code>doty2isoo</code> functions convert between ISO 8601 ordinal day numbers and <code>doties</code>. We use the <code>year2bool</code> function from <a href="#exm-gregl">Example&nbsp;7</a> in <a href="#exm-isoo">Example&nbsp;8</a> to correct for the fact that Leap Day shifts ISO 8601 ordinal day numbers by 1 day in leap years. To be clear, we only have to take Leap Day into account when dealing with <code>isoo</code> dates. <code>Decalendar</code> <code>doties</code> are the same in common and leap years, because Leap Day is at the end of the <code>Decalendar</code> year.</p>
+<p><code>Deco</code> dates (<code>year+day</code>) are very similar to <a href="https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates">ISO 8601 ordinal (<code>isoo</code>) dates</a> (<code>year-day</code>). Like <code>Decalendar</code> <code>doties</code>, <code>isoo</code> dates count the number of days since the start of the year. Unlike ordinal dates, <code>doties</code> are <a href="https://en.wikipedia.org/wiki/Zero-based_numbering">zero-based</a> and do not differ across common and leap years. The <code>deco</code> date can be easily obtained from the <code>isoo</code> date using the calculations shown in <a href="#eq-isoo1">Equation&nbsp;2</a>, <a href="#eq-isoo2">Equation&nbsp;3</a>, and <a href="#exm-isoo">Example&nbsp;9</a>. These calculation shift the <code>isoo</code> date by 60 or 61 days to account for the 2-month difference between <code>Decalendar</code> and the Gregorian calendar.</p>
+<p>In <a href="#exm-isoo">Example&nbsp;9</a>, the <code>isoo2doty</code> and <code>doty2isoo</code> functions convert between ISO 8601 ordinal day numbers and <code>doties</code>. We use the <code>year2bool</code> function from <a href="#exm-gregl">Example&nbsp;8</a> in <a href="#exm-isoo">Example&nbsp;9</a> to correct for the fact that Leap Day shifts ISO 8601 ordinal day numbers by 1 day in leap years. To be clear, we only have to take Leap Day into account when dealing with <code>isoo</code> dates. <code>Decalendar</code> <code>doties</code> are the same in common and leap years, because Leap Day is at the end of the <code>Decalendar</code> year.</p>
 <p><span id="eq-isoo1"><span class="math display">\[(isoordinal + 305 - year2bool(year)) \mod 365 \qquad(2)\]</span></span></p>
 <p><span id="eq-isoo2"><span class="math display">\[(doty + 60 + year2bool(year + 1)) \mod 365 \qquad(3)\]</span></span></p>
-<p><span class="theorem-title"><strong>Example 8 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 9 </strong></span>&nbsp;</p>
 <section id="javascript-3" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="javascript-3">JavaScript</h4>
 <section id="isoo2doty" class="level5 page-columns page-full">
@@ -3424,9 +3448,9 @@ paste0(sprintf("%04d", doty2year()), "+", sprintf("%03d", doty2isoo()))</code></
 </section>
 <section id="calendar-dates" class="level3 page-columns page-full" data-number="4.4.3">
 <h3 data-number="4.4.3" class="anchored" data-anchor-id="calendar-dates"><span class="header-section-number">4.4.3</span> Calendar dates</h3>
-<p>ISO 8601 <a href="https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates">calendar dates (<code>isoc</code>)</a> consist of a four-digit year, a two-digit month, and a two-digit <code>dotm</code> separated by hyphens (<code>year-mm-dd</code>). This format is the current widely accepted standard for displaying Gregorian calendar dates. We can combine code from <a href="#exm-coor">Example&nbsp;5</a> and <a href="#exm-gregm">Example&nbsp;6</a> to convert between <code>deco</code> dates and <code>isoc</code> dates, as shown in <a href="#exm-isoc">Example&nbsp;9</a>. The code in <a href="#exm-isoc">Example&nbsp;9</a> formats the output of the <code>greg2year</code> and <code>greg2doty</code> functions into <code>deco</code> dates and the output of the <code>doty2year</code> and <code>doty2greg</code> functions into <code>isoc</code> dates.</p>
+<p>ISO 8601 <a href="https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates">calendar dates (<code>isoc</code>)</a> consist of a four-digit year, a two-digit month, and a two-digit <code>dotm</code> separated by hyphens (<code>year-mm-dd</code>). This format is the current widely accepted standard for displaying Gregorian calendar dates. We can combine code from <a href="#exm-coor">Example&nbsp;6</a> and <a href="#exm-gregm">Example&nbsp;7</a> to convert between <code>deco</code> dates and <code>isoc</code> dates, as shown in <a href="#exm-isoc">Example&nbsp;10</a>. The code in <a href="#exm-isoc">Example&nbsp;10</a> formats the output of the <code>greg2year</code> and <code>greg2doty</code> functions into <code>deco</code> dates and the output of the <code>doty2year</code> and <code>doty2greg</code> functions into <code>isoc</code> dates.</p>
 <p>As mentioned in <a href="#sec-coor">Section&nbsp;4.3.1</a>, <code>Decalendar</code> uses <code>doties</code> as dates instead of month and day-of-the-month (<code>dotm</code>) numbers, but if required, Gregorian calendar dates can be provided in the <code>Decalendar</code> calendar (<code>decc</code>, pronounced “deck-see”) format (<code>year+m+dd</code>), which is very similar to the <code>isoc</code> date format. The <code>decc</code> format is described in <a href="#sec-dotm">Section&nbsp;5.1</a>. Examples of the <code>decc</code> format are provided in <a href="#sec-dotex">Section&nbsp;5.3</a>. To be clear, the <code>decc</code> format is only used to display Gregorian calendar dates and otherwise does not play any role in <code>Decalendar</code>.</p>
-<p><span class="theorem-title"><strong>Example 9 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 10 </strong></span>&nbsp;</p>
 <section id="javascript-4" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="javascript-4">JavaScript</h4>
 <section id="greg2deco" class="level5 page-columns page-full">
@@ -3518,8 +3542,8 @@ paste0(sprintf("%04d", doty2year()), "-",
 <section id="time-zones-1" class="level3 page-columns page-full" data-number="4.4.4">
 <h3 data-number="4.4.4" class="anchored" data-anchor-id="time-zones-1"><span class="header-section-number">4.4.4</span> Time zones</h3>
 <p><code>Isoc</code> dates can be combined with the <a href="https://en.wikipedia.org/wiki/ISO_8601#Times">ISO 8601 time (<code>isot</code>) format</a> (<code>hh:mm:ss</code>) to form <code>isoc</code> timestamps. Likewise, <code>deco</code> dates can be combined with <code>Declock</code> times to form <code>deco</code> timestamps. Both <code>deco</code> (<code>year+day.clockZ</code>) and <code>isoc</code> (<code>year-mm-ddThh:mm:ssZ</code>) timestamps can end in a <code>Z</code>. This <code>Z</code> is a <a href="https://en.wikipedia.org/wiki/Military_time_zone#Description">military time zone code</a> that represents the <a href="https://en.wikipedia.org/wiki/UTC+00:00">UTC+00:00</a> time zone, which is the basis of <a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">Coordinated Universal Time (UTC)</a>.</p>
-<p><code>Deco</code> timestamps that are synchronized with UTC can either end in <code>Z</code> (<code>year+day.clockZ</code>) or <code>+0</code> (<code>year+day.clock+0</code>). Noon UTC can be written <code>.5Z</code> or <code>.5+0</code> in <code>Declock</code> and 12:00:00Z, 120000Z, 12:00:00+00, or 120000+00 as per ISO 8601. The code in <a href="#exm-isoz">Example&nbsp;10</a> converts between UTC offsets and military time zone codes. <a href="#sec-zone">Section&nbsp;3</a> provides more information on <code>Declock</code> time zones.</p>
-<p><span class="theorem-title"><strong>Example 10 </strong></span>&nbsp;</p>
+<p><code>Deco</code> timestamps that are synchronized with UTC can either end in <code>Z</code> (<code>year+day.clockZ</code>) or <code>+0</code> (<code>year+day.clock+0</code>). Noon UTC can be written <code>.5Z</code> or <code>.5+0</code> in <code>Declock</code> and 12:00:00Z, 120000Z, 12:00:00+00, or 120000+00 as per ISO 8601. The code in <a href="#exm-isoz">Example&nbsp;11</a> converts between UTC offsets and military time zone codes. <a href="#sec-zone">Section&nbsp;3</a> provides more information on <code>Declock</code> time zones.</p>
+<p><span class="theorem-title"><strong>Example 11 </strong></span>&nbsp;</p>
 <section id="javascript-5" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="javascript-5">JavaScript</h4>
 <section id="hour2zone" class="level5 page-columns page-full">
@@ -3660,7 +3684,7 @@ zone2hour()</code></pre>
 </section>
 <section id="times" class="level3 page-columns page-full" data-number="4.4.5">
 <h3 data-number="4.4.5" class="anchored" data-anchor-id="times"><span class="header-section-number">4.4.5</span> Times</h3>
-<p>The formula for conversion of standard time to <code>Declock</code> time is shown in <a href="#eq-declock">Equation&nbsp;4</a>. The value of <code>x</code> in <a href="#eq-declock">Equation&nbsp;4</a>. can be modified to obtain different units, which are displayed in <a href="#tbl-isot">Table&nbsp;8</a>. To convert <code>Declock</code> time into standard time, we first convert into hours using <a href="#eq-hour">Equation&nbsp;5</a> and the appropriate <code>x</code> value from <a href="#tbl-isot">Table&nbsp;8</a>. Then, we convert hours into minutes with <a href="#eq-minute">Equation&nbsp;6</a> and minutes into seconds with <a href="#eq-second">Equation&nbsp;7</a> The <code>hmso2doty</code> and <code>doty2hmso</code> functions in <a href="#exm-isot">Example&nbsp;11</a> uses these formulas to convert between standard time and <code>Declock</code> time.</p>
+<p>The formula for conversion of standard time to <code>Declock</code> time is shown in <a href="#eq-declock">Equation&nbsp;4</a>. The value of <code>x</code> in <a href="#eq-declock">Equation&nbsp;4</a>. can be modified to obtain different units, which are displayed in <a href="#tbl-isot">Table&nbsp;8</a>. To convert <code>Declock</code> time into standard time, we first convert into hours using <a href="#eq-hour">Equation&nbsp;5</a> and the appropriate <code>x</code> value from <a href="#tbl-isot">Table&nbsp;8</a>. Then, we convert hours into minutes with <a href="#eq-minute">Equation&nbsp;6</a> and minutes into seconds with <a href="#eq-second">Equation&nbsp;7</a> The <code>hmso2doty</code> and <code>doty2hmso</code> functions in <a href="#exm-isot">Example&nbsp;12</a> uses these formulas to convert between standard time and <code>Declock</code> time.</p>
 <p><span id="eq-declock"><span class="math display">\[declock = \frac{hour}{24} + \frac{minute}{1440} + \frac{second}{86400} \cdot 10^x \qquad(4)\]</span></span></p>
 <p><span id="eq-hour"><span class="math display">\[hour = declock \cdot 24 \cdot 10^x \qquad(5)\]</span></span></p>
 <p><span id="eq-minute"><span class="math display">\[minute = \frac{hour - \lfloor hour \rfloor}{60} \qquad(6)\]</span></span></p>
@@ -3713,7 +3737,7 @@ zone2hour()</code></pre>
 </table>
 <p>Table&nbsp;8: The powers of ten of units based on days</p>
 </blockquote>
-<p><span class="theorem-title"><strong>Example 11 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 12 </strong></span>&nbsp;</p>
 </section>
 <section id="javascript-6" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="javascript-6">JavaScript</h4>
@@ -3831,9 +3855,9 @@ doty2hmso()</code></pre>
 <section id="timestamps" class="level3 page-columns page-full" data-number="4.4.6">
 <h3 data-number="4.4.6" class="anchored" data-anchor-id="timestamps"><span class="header-section-number">4.4.6</span> Timestamps</h3>
 <p><code>Decalendar</code> seeks to make months and weeks obsolete. Similarly, <code>Declock</code> aims to deprecate hours, minutes, and seconds in favor of <a href="https://en.wikipedia.org/wiki/Decimal_time#Fractional_days">fractional days</a> (<code>.day</code>). <code>Deco</code> timestamps, which combine <code>Decalendar</code> dates and <code>Declock</code> times, are more concise and easier to read than ISO 8601 timestamps. An <code>isoc</code> timestamp that includes seconds is 20 characters long (<code>year-mm-ddThh:mm:ssZ</code>), while a <code>deco</code> timestamp with slightly greater precision is only 15 characters long (<code>year+day.clockZ</code>). ISO 8601 timestamps can omit delimiters except for the <code>T</code> which separates the date and the time (<code>yearmmddThhmmssZ</code>). Without delimiters, <code>isoc</code> timestamps become even more difficult to read and still cannot match the brevity of <code>Decalendar</code> timestamps.</p>
-<p>Coincidentally, an ISO 8601 ordinal (<code>isoo</code>) timestamp (<code>year-dayThh:mm:ssZ</code>) without delimiters (<code>yeardayThhmmssZ</code>) is the same length as a <code>deco</code> timestamp (<code>year+day.clockZ</code>). <code>Deco</code> timestamps cannot exist without delimiters, because removing the plus sign (<code>+</code>) from a <code>deco</code> timestamp turns it into a <code>doty</code> number (<code>ddddddd.clock</code>). If we removed the <code>+</code> from the <code>deco</code> timestamp <code>1969+306.00000</code>, we would obtain the <code>doty</code> number <code>1969306.00000</code> would represent midnight 1969306 days from the beginning of the current year. The rules for <code>deco</code> timestamp interpretation are summarized by the code in the <code>deco2doty</code> function in <a href="#exm-unixp">Example&nbsp;18</a>.</p>
-<p>To create a <code>deco</code> timestamp, we can use the <code>doty2deco</code> or the <code>greg2deco</code> functions as shown in <a href="#exm-isos">Example&nbsp;12</a>. Similarly, <a href="#exm-isos">Example&nbsp;12</a> also shows how to create an <code>isoc</code> timestamp with the <code>doty2isoc</code> and <code>doty2isoc</code> functions. All of these timestamp creation functions assume that the provided times are in the UTC+00:00 time zone or <code>Zone</code> <code>0</code> and need to be adjusted to the provided time zone by adding the appropriate time zone offset to the timestamp. <a href="#sec-unixb">Section&nbsp;4.6.4</a> and <a href="#sec-unixp">Section&nbsp;4.6.5</a> further discuss timestamps and provide functions for building, parsing, and converting timestamps.</p>
-<p><span class="theorem-title"><strong>Example 12 </strong></span>&nbsp;</p>
+<p>Coincidentally, an ISO 8601 ordinal (<code>isoo</code>) timestamp (<code>year-dayThh:mm:ssZ</code>) without delimiters (<code>yeardayThhmmssZ</code>) is the same length as a <code>deco</code> timestamp (<code>year+day.clockZ</code>). <code>Deco</code> timestamps cannot exist without delimiters, because removing the plus sign (<code>+</code>) from a <code>deco</code> timestamp turns it into a <code>doty</code> number (<code>ddddddd.clock</code>). If we removed the <code>+</code> from the <code>deco</code> timestamp <code>1969+306.00000</code>, we would obtain the <code>doty</code> number <code>1969306.00000</code> would represent midnight 1969306 days from the beginning of the current year. The rules for <code>deco</code> timestamp interpretation are summarized by the code in the <code>deco2doty</code> function in <a href="#exm-unixp">Example&nbsp;19</a>.</p>
+<p>To create a <code>deco</code> timestamp, we can use the <code>doty2deco</code> or the <code>greg2deco</code> functions as shown in <a href="#exm-isos">Example&nbsp;13</a>. Similarly, <a href="#exm-isos">Example&nbsp;13</a> also shows how to create an <code>isoc</code> timestamp with the <code>doty2isoc</code> and <code>doty2isoc</code> functions. All of these timestamp creation functions assume that the provided times are in the UTC+00:00 time zone or <code>Zone</code> <code>0</code> and need to be adjusted to the provided time zone by adding the appropriate time zone offset to the timestamp. <a href="#sec-unixb">Section&nbsp;4.6.4</a> and <a href="#sec-unixp">Section&nbsp;4.6.5</a> further discuss timestamps and provide functions for building, parsing, and converting timestamps.</p>
+<p><span class="theorem-title"><strong>Example 13 </strong></span>&nbsp;</p>
 <section id="javascript-7" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="javascript-7">JavaScript</h4>
 <section id="doty2deco" class="level5 page-columns page-full">
@@ -3996,14 +4020,14 @@ paste0(sprintf("%04d", doty2year()), "-",
 </section>
 <section id="time-intervals" class="level3" data-number="4.4.7">
 <h3 data-number="4.4.7" class="anchored" data-anchor-id="time-intervals"><span class="header-section-number">4.4.7</span> Time intervals</h3>
-<p>ISO 8601 specifies three methods of unequivocally representing <a href="https://en.wikipedia.org/wiki/ISO_8601#Time_intervals">time intervals</a>, <code>start/stop</code>, <code>start/span</code>, and <code>span/stop</code>. The <code>Decalendar</code> equivalents of these three time interval representations are <code>start:stop</code>, <code>start&gt;span</code>, and <code>stop&lt;span</code>. Notably, the <code>start/stop</code> syntax is used in Google Calendar “Add to Calendar” links (<code>https://calendar.google.com/calendar/render?action=TEMPLATE&amp;dates=start/stop</code>). Clicking on an “Add to Calendar” link opens an web browser interface for adding an event to an online calendar. The <code>greg2link</code> and <code>doty2link</code> functions in <a href="#exm-isoi">Example&nbsp;13</a> create such links for Google, Outlook, Office 365, and Yahoo online calendars.</p>
-<p><span class="theorem-title"><strong>Example 13 </strong></span>&nbsp;</p>
+<p>ISO 8601 specifies three methods of unequivocally representing <a href="https://en.wikipedia.org/wiki/ISO_8601#Time_intervals">time intervals</a>, <code>start/stop</code>, <code>start/span</code>, and <code>span/stop</code>. The <code>Decalendar</code> equivalents of these three time interval representations are <code>start:stop</code>, <code>start&gt;span</code>, and <code>stop&lt;span</code>. Notably, the <code>start/stop</code> syntax is used in Google Calendar “Add to Calendar” links (<code>https://calendar.google.com/calendar/render?action=TEMPLATE&amp;dates=start/stop</code>). Clicking on an “Add to Calendar” link opens an web browser interface for adding an event to an online calendar. The <code>greg2link</code> and <code>doty2link</code> functions in <a href="#exm-isoi">Example&nbsp;14</a> create such links for Google, Outlook, Office 365, and Yahoo online calendars.</p>
+<p><span class="theorem-title"><strong>Example 14 </strong></span>&nbsp;</p>
 </section>
 <section id="repeating-time-intervals" class="level3" data-number="4.4.8">
 <h3 data-number="4.4.8" class="anchored" data-anchor-id="repeating-time-intervals"><span class="header-section-number">4.4.8</span> Repeating time intervals</h3>
 <p>ISO 8601 time intervals can be made to repeat with the <code>Rn/</code> prefix (<code>Rn/start/stop</code>, <code>Rn/start/span</code>, <code>Rn/span/stop</code>), where <code>n</code> is the number of repetitions. Such <a href="https://en.wikipedia.org/wiki/ISO_8601#Repeating_intervals">repeating time intervals</a> are always consecutive and never overlap. The first three 6-hour intervals of 1970 could be written <code>R3/1970-01-01T00:00:00Z/T06</code> as per ISO 8601. This time interval in <code>Decalendar</code> could be written <code>1969+306&gt;.75&gt;.25&gt;0</code>. Unlike ISO 8601, <code>Decalendar</code> allows for the creation of non-consecutive and overlapping recurring intervals. If we wanted to include 3-hour breaks in between the three 6-hour intervals, we could write <code>1969+306&gt;1&gt;.25&gt;.125</code>. Similarly, the three 6-hour intervals could be made to overlap by 3 hours by writing <code>1969+306&gt;.5&gt;.25&lt;.125</code>.</p>
-<p>The <code>Decalendar</code> time interval representations above are called <code>spreads</code> and were inspired by the concept of <a href="https://en.wikipedia.org/wiki/Array_slicing">array slicing</a> from computer programming. <code>Decalendar</code> allows for the use of both <code>slices</code> (<code>start:stop:step</code>) and <code>spreads</code> (<code>start&gt;span&gt;split&gt;space</code>) to create time intervals. <a href="https://pandas.pydata.org/pandas-docs/version/1.1/user_guide/timeseries.html#indexing">Slicing of dates and times</a> is fully implemented in the <a href="https://pandas.pydata.org/">Pandas Python library</a>. The pandas code shown in <a href="#exm-isor">Example&nbsp;14</a> uses slicing to obtain the start times of the last three 6-hour intervals in Gregorian calendar year 1970, which is <code>1970+305&gt;.75&gt;.25&gt;0</code> in <code>Decalendar</code> and <code>R3/1970-12-31T06:00:00Z/T06</code> as per ISO 8601.</p>
-<p><span class="theorem-title"><strong>Example 14 </strong></span>&nbsp;</p>
+<p>The <code>Decalendar</code> time interval representations above are called <code>spreads</code> and were inspired by the concept of <a href="https://en.wikipedia.org/wiki/Array_slicing">array slicing</a> from computer programming. <code>Decalendar</code> allows for the use of both <code>slices</code> (<code>start:stop:step</code>) and <code>spreads</code> (<code>start&gt;span&gt;split&gt;space</code>) to create time intervals. <a href="https://pandas.pydata.org/pandas-docs/version/1.1/user_guide/timeseries.html#indexing">Slicing of dates and times</a> is fully implemented in the <a href="https://pandas.pydata.org/">Pandas Python library</a>. The pandas code shown in <a href="#exm-isor">Example&nbsp;15</a> uses slicing to obtain the start times of the last three 6-hour intervals in Gregorian calendar year 1970, which is <code>1970+305&gt;.75&gt;.25&gt;0</code> in <code>Decalendar</code> and <code>R3/1970-12-31T06:00:00Z/T06</code> as per ISO 8601.</p>
+<p><span class="theorem-title"><strong>Example 15 </strong></span>&nbsp;</p>
 <pre class="{python}"><code>#| tags: [intervals]
 import pandas as pd
 
@@ -4021,7 +4045,7 @@ pd.date_range("1970", "1971", freq="6H")[-4:-1]</code></pre>
 <p><span id="eq-year"><span class="math display">\[year = yotc + cycle * 400 \qquad(12)\]</span></span></p>
 <p><span id="eq-doty"><span class="math display">\[doty = \lfloor dotc - (365 \cdot yotc + \lfloor \frac{yotc}{4} \rfloor - \lfloor \frac{yotc}{100} \rfloor + \lfloor \frac{yotc}{400} \rfloor) \rfloor \qquad(13)\]</span></span></p>
 <p>The conversion between <code>doty</code> and <code>dote</code> is the most important calculation in <code>Decalendar</code> because it defines the behavior of positive and negative <code>deco</code> dates and stamps. The arithmetic</p>
-<p><span class="theorem-title"><strong>Example 15 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 16 </strong></span>&nbsp;</p>
 <section id="javascript-8" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="javascript-8">JavaScript</h4>
 <section id="doty2dote" class="level5 page-columns page-full">
@@ -4113,12 +4137,12 @@ paste0(sprintf("%04d", yd[1]), "+",
 </section>
 <section id="unix-time-conversion-to-decalendar-timestamp" class="level3 page-columns page-full" data-number="4.6.3">
 <h3 data-number="4.6.3" class="anchored" data-anchor-id="unix-time-conversion-to-decalendar-timestamp"><span class="header-section-number">4.6.3</span> UNIX time conversion to <code>Decalendar</code> timestamp</h3>
-<p>To obtain fractional days, we have to sum up all of the days in previous years and subtract this sum from <code>days</code> to obtain the current <code>Decalendar</code> ordinal (<code>deco</code>) timestamp as shown in <a href="#eq-unixt">Equation&nbsp;15</a>. The code in <a href="#exm-unixt">Example&nbsp;16</a> converts UNIX time into a <code>deco</code> timestamp in the <code>Zone</code> <code>0</code> time zone by passing the current UNIX timestamp to the <code>unix2doty</code> function. If we call this function without arguments (<code>unix2doty()</code>) the result will be the year and <code>doty</code> of the UNIX Epoch: 1969 and 306. To see <a href="#exm-unixt">Example&nbsp;16</a> in action, visit this <a href="https://codepen.io/maptv/pen/oNJZeea">CodePen</a> which displays the current <code>deco</code> (<code>year+day.clock</code>) and <code>isoc</code> (<code>year-mm-ddThh:mm:ss</code>) timestamps.</p>
+<p>To obtain fractional days, we have to sum up all of the days in previous years and subtract this sum from <code>days</code> to obtain the current <code>Decalendar</code> ordinal (<code>deco</code>) timestamp as shown in <a href="#eq-unixt">Equation&nbsp;15</a>. The code in <a href="#exm-unixt">Example&nbsp;17</a> converts UNIX time into a <code>deco</code> timestamp in the <code>Zone</code> <code>0</code> time zone by passing the current UNIX timestamp to the <code>unix2doty</code> function. If we call this function without arguments (<code>unix2doty()</code>) the result will be the year and <code>doty</code> of the UNIX Epoch: 1969 and 306. To see <a href="#exm-unixt">Example&nbsp;17</a> in action, visit this <a href="https://codepen.io/maptv/pen/oNJZeea">CodePen</a> which displays the current <code>deco</code> (<code>year+day.clock</code>) and <code>isoc</code> (<code>year-mm-ddThh:mm:ss</code>) timestamps.</p>
 <p><span id="eq-unixt"><span class="math display">\[time = year \cdot 365 + \sum_{n=1}^{year} \left[ \begin{array}{c}
 y \mod 4 = 0 \\
 \land y \mod 100 \neq 0 \\
 \lor y \mod 400 = 0 \end{array} \right] \qquad(15)\]</span></span></p>
-<p><span class="theorem-title"><strong>Example 16 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 17 </strong></span>&nbsp;</p>
 <section id="javascript-9" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="javascript-9">JavaScript</h4>
 <section id="unix2doty" class="level5 page-columns page-full">
@@ -4141,7 +4165,7 @@ y \mod 4 = 0 \\
 <span id="cb102-13"><a href="#cb102-13" aria-hidden="true" tabindex="-1"></a>    )<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>2023+240.92825+0</code></pre>
+<pre><code>2023+241.74529+0</code></pre>
 </div>
 </div></div>
 </section>
@@ -4244,8 +4268,8 @@ paste0(sprintf("%04d", yd[1]), "+",
 </section>
 <section id="building-timestamps" class="level3 page-columns page-full" data-number="4.6.4">
 <h3 data-number="4.6.4" class="anchored" data-anchor-id="building-timestamps"><span class="header-section-number">4.6.4</span> Building timestamps</h3>
-<p>The code in <a href="#exm-unixt">Example&nbsp;16</a> creates a <code>Decalendar</code> ordinal (<code>deco</code>) timestamp from UNIX time. <a href="#exm-unixb">Example&nbsp;17</a> encapsulates this code in a function called <code>unix2deco</code>. The <code>deco</code> timestamps converted from UNIX time are all in the <code>Zone</code> <code>0</code> time zone. To switch to a different time zone, we should pass the year and <code>doty</code> we obtain from the <code>unix2doty</code> function to the <code>doty2deco</code> function from <a href="#exm-isot">Example&nbsp;11</a> along with the desired time zone.</p>
-<p><span class="theorem-title"><strong>Example 17 </strong></span>&nbsp;</p>
+<p>The code in <a href="#exm-unixt">Example&nbsp;17</a> creates a <code>Decalendar</code> ordinal (<code>deco</code>) timestamp from UNIX time. <a href="#exm-unixb">Example&nbsp;18</a> encapsulates this code in a function called <code>unix2deco</code>. The <code>deco</code> timestamps converted from UNIX time are all in the <code>Zone</code> <code>0</code> time zone. To switch to a different time zone, we should pass the year and <code>doty</code> we obtain from the <code>unix2doty</code> function to the <code>doty2deco</code> function from <a href="#exm-isot">Example&nbsp;12</a> along with the desired time zone.</p>
+<p><span class="theorem-title"><strong>Example 18 </strong></span>&nbsp;</p>
 <section id="javascript-10" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="javascript-10">JavaScript</h4>
 <section id="unix2deco" class="level5 page-columns page-full">
@@ -4319,8 +4343,8 @@ unix2deco()</code></pre>
 </section>
 <section id="parsing-timestamps" class="level3 page-columns page-full" data-number="4.6.5">
 <h3 data-number="4.6.5" class="anchored" data-anchor-id="parsing-timestamps"><span class="header-section-number">4.6.5</span> Parsing timestamps</h3>
-<p>To extract the components of a <code>Decalendar</code> timestamp, we can use the <code>parse_dec</code> function in <a href="#exm-isos">Example&nbsp;12</a>. Parsing timestamps is the first step before any later processes such as timestamp arithmetic or conversion between timestamp formats. The <code>parse_dec</code> function returns a year, a <code>doty</code>, and a fractional day time zone offset. The year and time zone offset can be omitted in the timestamp provided to <code>parse_dec</code>. If not specified in the timestamp, the year is the current year and the time zone offset is 0.</p>
-<p><span class="theorem-title"><strong>Example 18 </strong></span>&nbsp;</p>
+<p>To extract the components of a <code>Decalendar</code> timestamp, we can use the <code>parse_dec</code> function in <a href="#exm-isos">Example&nbsp;13</a>. Parsing timestamps is the first step before any later processes such as timestamp arithmetic or conversion between timestamp formats. The <code>parse_dec</code> function returns a year, a <code>doty</code>, and a fractional day time zone offset. The year and time zone offset can be omitted in the timestamp provided to <code>parse_dec</code>. If not specified in the timestamp, the year is the current year and the time zone offset is 0.</p>
+<p><span class="theorem-title"><strong>Example 19 </strong></span>&nbsp;</p>
 <section id="javascript-11" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="javascript-11">JavaScript</h4>
 <section id="parse_dec" class="level5 page-columns page-full">
