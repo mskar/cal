@@ -859,24 +859,11 @@ Just like @exm-intro-pent allows us to select `Declock` time intervals, we can c
 ::: {#exm-intro-dotd}
 :::
 
-::: {.grid}
-
-::: {.g-col-6}
 ```{ojs}
 //| echo: false
-viewof startStop = interval([0, 365], {step: 1, value: [1, 365], label: 'start:stop', width: 195, format: ([start, end]) => start === end ? "" : `${start}:${end}`})
-```
-:::
-
-::: {.g-col-6}
-```{ojs}
-//| echo: false
+viewof startStop = interval([0, 365], {step: 1, value: [0, 365], label: 'start:stop', width: 425, format: ([start, end]) => start === end ? "" : `${start}:${end}`})
 viewof step = Inputs.number([1, 365], {step: 1, label: "Step", value: 1, placeholder: "Enter step size"})
 ```
-
-:::
-
-:::
 
 ```{ojs}
 //| echo: false
