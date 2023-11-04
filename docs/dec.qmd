@@ -2,10 +2,10 @@
 title: "Decalendar and Declock"
 license: "CC BY-SA"
 author:
-  - name: Martin Laptev
-    url: https://maptv.github.io
+  - name: Martin Skarzynski
+    url: https://mskar.github.io
 citation:
-  url: https://maptv.github.io/cal
+  url: https://mskar.github.io/cal
   issued: 2023
 ---
 
