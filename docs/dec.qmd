@@ -687,7 +687,7 @@ viewof scrubberDeco = Scrubber(numbers, {autoplay: false, alternate: true, delay
 :::
 
 ::: {.column-margin}
-```{#lst-intro-deco lst-cap="Deco string processing" cap-location=margin}
+```{#lst-intro-deco lst-cap="Deco timestamp conversion" cap-location=margin}
 ```
 :::
 
@@ -782,11 +782,13 @@ As mentioned in @sec-intro-doty, `deks` function as both months and weeks in `De
 [^pent]: `pent`: a group of 5 days; half of a `dek`
 [^sched]: `pently` schedule: one of a set of workday and restday schedules for the 5 days of the `pent`
 
-Unlike `Schedule` `3` and the other `pently` schedules, the weekly schedule is asymmetric and divides up workdays into proportions that are easier to express as fractions: 3/8 (.375), 1/3 (.3̅), and 7/24 (0.2916̅). In contrast, the proportions of the day in `pently` schedules are never [repeating decimal](https://en.wikipedia.org/wiki/Repeating_decimal) numbers. Each `Schedule` `3` workday is split up symmetrically into proportions so that workday starts at .3 (7.2 hours), lasts .4 (9.6 hours), and ends at .7 (16.8 hours).
+Unlike `Schedule` `3` and the other `pently` schedules, the weekly schedule is asymmetric and divides up workdays into proportions that are easier to express as fractions: 3/8 (.375), 1/3 (.3̅), and 7/24 (0.2916̅). In contrast, `pently` schedules divides each workday into simple, symmetrical proportions that are never [repeating decimal](https://en.wikipedia.org/wiki/Repeating_decimal) numbers. The `Schedule` `3` workday is longer the typical 9-to-5, but the longer workday is compensated by more frequent restdays.
 
 {{< embed schedules.ipynb#fig-schedules >}}
 
-@exm-intro-pent provides the opportunity to explore all four of the `pently` schedules. You can select which schedule to view using the [Observable](https://observablehq.com/about) [radio inputs](https://observablehq.com/@observablehq/input-radio), use the [interval sliders](https://observablehq.com/@mootari/range-slider) to adjust the schedule if desired, and click the [Download button](https://observablehq.com/@jeremiak/download-data-button) to obtain the schedule data used to create @fig-intro-dek. To download the data as a [JSON](https://en.wikipedia.org/wiki/JSON) file instead of a [CSV](https://en.wikipedia.org/wiki/Comma-separated_values), change the file extension in the filename text input from `.csv` to `.json`. @sec-sched provides more information on `Schedule` `3` and the other `pently` schedules.
+@exm-intro-pent provides the opportunity to explore all four of the `pently` schedules. `Schedule` `3` is the default `pently` schedule, and should be followed unless there is a compelling reason to do otherwise. Despite having different numbers of workdays, all `pently` schedules keep the amount of spent at work constant at 1.2 days (120 `cents`) per `pent`. Every `pently` schedule also splits up workdays symmetrically so that the time before work is equal to the time after work. You can select which schedule to view in @exm-intro-pent using the [Observable](https://observablehq.com/about) [radio inputs](https://observablehq.com/@observablehq/input-radio). @sec-sched provides more information on `Schedule` `3` and the other `pently` schedules.
+
+You can also use the [interval sliders](https://observablehq.com/@mootari/range-slider) to create a custom schedule and the Download⬇️button to obtain the schedule data. Each interval is summarized by a `Declock` `slice` shown next to its slider. `Decalendar` and `Declock` `slices` are inspired by [array slicing](https://en.wikipedia.org/wiki/Array_slicing#:~:text=In%20computer%20programming%2C%20array%20slicing%20is%20an%20operation%20that%20extracts%20a%20subset%20of%20elements%20from%20an%20array%20and%20packages%20them%20as%20another%20array) in computer programming and are used to represent date and time intervals. The `slice` that summarizes the `Schedule` `3` workday is `.3:.7`, where .3 (7.2 hours) is the `start` and .7 (16.8 hours) is the `stop`. Additional details regarding `slices` and other ways to express intervals are available in @sec-slice.
 
 ::: {#exm-intro-pent}
 :::
@@ -854,16 +856,89 @@ Plot.plot({
   ]})
 ```
 
-Just like @exm-intro-pent allows us to select `Declock` time intervals, we can create `Decalendar` date intervals in @exm-intro-dotd. To select discontinuous intervals, we can use the `step` input to "step" over $step-1$ dates in the interval. The `start:stop` and `step` inputs in @exm-intro-dotd enable [array slicing](https://en.wikipedia.org/wiki/Array_slicing#:~:text=In%20computer%20programming%2C%20array%20slicing%20is%20an%20operation%20that%20extracts%20a%20subset%20of%20elements%20from%20an%20array%20and%20packages%20them%20as%20another%20array) as in the [Python programming language](https://en.wikipedia.org/wiki/Array_slicing#1991:_Python). In @fig-intro-dotd, `deks` are in separate rows, the days-of-the-`dek` are stacked in columns, and each `Decalendar` date has its own cell. `Decalendar` dates that are included in the interval are highlighted in orange, and all other `Decalendar` dates are labeled blue. Try setting a `step`👣of 10 to select all instances of one of the days-of-the-`dek`!
+`Slices` can be used to select `Declock` time intervals, as in @exm-intro-pent above, or `Decalendar` date intervals, as in @exm-intro-dotd below. `Decalendar` date intervals can represent events take place over multiple days. In addition to `slices`, `Decalendar` and `Declock` intervals can also be chosen using `spreads`. Use the [Observable](https://observablehq.com/about) [button](https://observablehq.com/@observablehq/input-button) and [checkbox](https://observablehq.com/@observablehq/input-checkbox) inputs in @exm-intro-dotd to display different `dotd` combinations in @fig-intro-dotd. @fig-intro-dotd shows dates selected by a `slice` in [blue]{.blue}, dates selected by a `spread` in [orange]{.orange}, dates selected by both in [green]{.green}, and dates selected by neither in [gray]{.gray}. @sec-slice and @sec-spread build on the practical introduction to `slices` and `spreads` provided by @exm-intro-dotd.
+
+The @exm-intro-dotd button and checkbox inputs will modify the associated `slice` and `spread` text and numeric inputs as needed to select the desired days-of-the-`dek`. The numeric inputs for `slices` are the `start`🎬index, the `stop`🛑index, and the `step`👣size, which are separated by colons (`start:stop:step`) when combined into a `slice`. Similarly, the numeric inputs for `spreads` are the `start`🎬or🛑`stop` index, the `span`🪽size, the `split` size, and the `space` size, which are typically delimited by greater-than signs (`start>span>split>space`) or a mix of greater-than and less-than signs (`stop<span>split>space`).
+
+The numeric inputs in @exm-intro-dotd cannot capture the full power of `spreads` and `slices`, because `slices` can have any number of `steps` and, likewise, `spreads` can have any number of alternating `split` and `space` sizes. We can select all even or odd days-of-the-`dek` using a `slice` with a single `step` (`::2` or `1::2`) or a `spread` with one `split`-`space` pair (`>>>1` or `1>>>1`). More complex patterns, such as prime or composite days-of-the-`dek`, require multiple `step` sizes for `slices` (`2:::2:2:5` or `4::2:2::5`) or multiple `split`-`space` pairs (`2>>2>1>>1>>4` or `4>>>1>>1>2>4`).
 
 ::: {#exm-intro-dotd}
 :::
 
 ```{ojs}
 //| echo: false
-viewof startStop = interval([0, 365], {step: 1, value: [0, 365], label: 'start:stop', width: 425, format: ([start, end]) => start === end ? "" : `${start}:${end}`})
-viewof step = Inputs.number([1, 365], {step: 1, label: "Step", value: 1, placeholder: "Enter step size"})
+viewof sliceDotd = Inputs.checkbox([...Array(10).keys()], {label: "slice dotd", value: [1, 6]})
 ```
+
+```{ojs}
+//| echo: false
+viewof spreadDotd = Inputs.checkbox([...Array(10).keys()], {label: "spread dotd", value: [1, 6]})
+```
+
+::: {.grid}
+
+::: {.g-col-6}
+```{ojs}
+//| echo: false
+viewof sliceString = transformInput(
+  Inputs.text({label: "slice string", placeholder: "Enter slice string", value: "0:366"}),
+{bind: viewof sliceInputs, transform: encodeSlice, invert: decodeSlice});
+viewof sliceInputs = Inputs.form([
+    Inputs.number([-366, 366], {step: 1, label: "start", value: 1, placeholder: "Enter start index"}),
+    Inputs.number([-366, 366], {step: 1, label: "stop", value: 366, placeholder: "Enter stop index"}),
+    Inputs.number([-366, 366], {step: 1, label: "step", value: 5, placeholder: "Enter step size"}),
+])
+```
+:::
+
+::: {.g-col-6}
+```{ojs}
+//| echo: false
+viewof spreadString = transformInput(
+  Inputs.text({label: "spread string", placeholder: "Enter spread string", value: "0>366>3>2"}),
+{bind: viewof spreadInputs, transform: encodeSpread, invert: decodeSpread});
+viewof spreadInputs = Inputs.form([
+    Inputs.number([-366, 366], {step: 1, label: "start", value: 0, placeholder: "Enter start index"}),
+    Inputs.number([-366, 366], {step: 1, label: "span", value: 366, placeholder: "Enter span size"}),
+    Inputs.number([-366, 366], {step: 1, label: "split", value: 3, placeholder: "Enter split size"}),
+    Inputs.number([-366, 366], {step: 1, label: "space", value: 2, placeholder: "Enter space size"}),
+])
+```
+:::
+
+:::
+
+```{ojs}
+//| echo: false
+viewof togglePlot = Inputs.button([
+  [invertDotd ? "None" : "All", value => [...Array(10).keys()]],
+  [invertDotd ? "Even" : "Odd", value => [1, 3, 5, 7, 9]],
+  [invertDotd ? html`<s>Prime</s>` : "Prime", value => [2, 3, 5, 7]],
+  [invertDotd ? html`<s>Composite</s>` : "Composite", value => [4, 6, 8, 9]],
+  [invertDotd ? html`<s>Schedule2</s>` : "Schedule2", value => [0, 1, 5, 6]],
+  [invertDotd ? html`<s>Schedule3</s>` : "Schedule3", value => [0, 1, 2, 5, 6, 7]],
+  [invertDotd ? html`<s>Schedule4</s>` : "Schedule4", value => [0, 1, 2, 3, 5, 6, 7, 8]],
+], {value: [], label: "select dotd"})
+```
+
+::: {.grid}
+
+::: {.g-col-6}
+```{ojs}
+//| echo: false
+viewof invertDotd = Inputs.toggle({label: "invert buttons"})
+```
+:::
+
+::: {.g-col-6}
+```{ojs}
+//| echo: false
+viewof sliceOrSpread = toggleSwitch({textOn: invertDotd ? "Spread" : 'Slice' , textOff: invertDotd ? "Slice" : 'Spread'})
+```
+:::
+
+:::
+
 
 ```{ojs}
 //| echo: false
@@ -871,15 +946,16 @@ viewof step = Inputs.number([1, 365], {step: 1, label: "Step", value: 1, placeho
 //| fig-cap: "Decalendar date selector"
 //| fig-cap-location: margin
 //| fig-align: center
-
 // https://observablehq.com/@dec/dotd
 Plot.plot({
   padding: 0,
   x: {axis: "top", label: null},
   y: {label: null, tickPadding: 12},
-  color: {type: "categorical", scheme: "Category10"},
   marks: [
-    Plot.cell(dates, {x: d => d[2], y: d => d.slice(0, 2), fill: d => slice(dates, startStop[0], startStop[1], step).includes(d), inset: 0.5}),
+    Plot.cell(dates, {x: d => d[2], y: d => d.slice(0, 2), fill: d =>
+      sliceArray.includes(d) && spreadArray.includes(d) ? "green" :
+      sliceArray.includes(d) && !spreadArray.includes(d) ? "blue" :
+      !sliceArray.includes(d) && spreadArray.includes(d) ? "orange" : "grey", inset: 0.5}),
     Plot.text(dates, {x: d => d[2], y: d => d.slice(0, 2), fill: "white", stroke: "white", fontSize: 20})
   ]
 })
@@ -1115,21 +1191,161 @@ button = (data, filename = 'data.csv') => {
   );
   return button;
 }
-// https://github.com/hustcc/slice.js/blob/master/src/index.js
-slice = (v, start, end, step) => {
-  const r = [];
-  let i;
-  if (step > 0) {
-    for (i = start; i < end; i += step) {
-      r.push(v[i]);
-    }
-  } else {
-    for (i = start; i > end; i += step) {
-      r.push(v[i]);
+function invert(arr) {
+  return invertDotd ? [...Array(10).keys()].map(n => !arr.includes(n)).map((x, i) => x ? i : null).filter(i => i !== null) : arr
+}
+// https://observablehq.com/@chrispahm/toggle-switch-input-button
+function toggleSwitch(options = { textOn: 'True', textOff: 'False' }) {
+  const button = html`<div class="button-switch""></div>`;
+  button.innerText = options.textOn;
+  button.value = true;
+
+  button.onclick = () => {
+    button.value = !button.value;
+    button.innerText = button.value ? options.textOn : options.textOff;
+    button.dispatchEvent(new CustomEvent("input"));
+  };
+
+  addButtonStyle()
+
+  return button;
+}
+// https://observablehq.com/@chrispahm/toggle-switch-input-button
+function addButtonStyle() {
+  var el = document.createElement('style');
+  el.setAttribute('type', 'text/css');
+  document.head.appendChild(el);
+  var sheet = el.sheet;
+  function addRule(rule) {
+    try {
+      sheet.insertRule(rule, sheet.cssRules.length);
+    } catch (e) {
+      console.warn('Error inserting rule', rule, e);
     }
   }
-  return r;
-};
+  addRule(
+    '.button-switch { -webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;display: inline-block;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;background-color: #EFEFEF;padding: 0px 7px 0px 7px;text-align: center;border: 1px solid grey;width: auto;color: #1c1c1c;font-size: 13px;font-family: sans-serif;text-decoration: none; }'
+  );
+  addRule(
+    '.button-switch:hover { background-color: #E5E5E5;border: 1px solid #454545; }'
+  );
+  addRule(
+    '.button-switch:active { background-color: #f5f5f5;border: 1px solid grey; }'
+  );
+}
+function setSpreadDotd(dotd) {
+  const dotdLength = dotd.length;
+  if (dotdLength === 10) {return ">"}
+  if (dotdLength === 0) {return ">0"}
+  if (dotdLength === 1) {return `${dotd[0]}>>1>9`}
+  const steps = dotd.map((x, i) => dotd[i + 1] - x)
+    .filter(i => !isNaN(i)),
+    result = [];
+  let split = 1;
+  for (const step of steps) {
+    if (step !== 1) {
+       result.push([split, step - 1])
+       split = 1
+    } else {
+      split += 1
+    }
+  }
+  result.push(split)
+  const flat = [].concat(...result),
+    resultSum = flat.reduce((a, b) => a + b, 0),
+    uniq = [...new Set(flat)];
+  return [dotd[0] ? dotd[0] : null, null].concat(JSON.stringify(uniq) === "[1]" ? [null, 1] :
+                               flat.concat(10 - resultSum).map((x, i) => i % 2 === 0 && x === 1 ? null : x)).join(">")
+}
+function setSliceDotd(dotd) {
+  const dotdLength = dotd.length;
+  if (dotdLength === 10) {return ":"}
+  if (dotdLength === 0) {return ":0"}
+  const steps = dotd.map((x, i) => dotd[i + 1] - x)
+    .filter(i => !isNaN(i)),
+    stepSum = steps.reduce((a, b) => a + b, 0),
+    uniq = [...new Set(steps.concat(10 - stepSum))];
+  return [dotd[0] ? dotd[0] : null, null].concat(uniq.length === 1 ? uniq :
+                               steps.concat(10 - stepSum).map(x => x === 1 ? null : x)).join(":");
+}
+function encodeSlice(...args) {
+  return args.join().replaceAll(",", ":")
+}
+function decodeSlice(s) {
+  let [start, stop, ...steps] = s.split(":").map(i => i === "" ? null : Number(i))
+  const step = steps[0] == null ? 1: steps[0];
+  start = start == null && step >= 0 ? 0 : start == null && step < 0 ? 365 : start;
+  stop = stop == null && step >= 0 ? 366 : stop;
+  return [start, stop, step]
+}
+function decodeSpread(spread) {
+  return spread.replace(/^</, "366<").replace(/^>/, "0>")
+    .split(/(?=^\d|<|>)/).map(s => s.replace("<", "-")
+    .replace(">", "")).map(s => s === "" || isNaN(s) ? null : Number(s))
+}
+function encodeSpread(args) {
+  return args.map(a => isNaN(a) ? null : a).join(">").replace(">-", "<")
+}
+function slice(self, start, stop, steps, ...args) {
+  const len = self.length, result = [];
+  if (steps === 0 || len === 0) { return result };
+  steps = (!steps || steps.length === 0 ? [1] :
+    typeof steps === "number" ? [steps] :
+    typeof steps === "string" ? Array.from(steps, Number) :
+    steps).concat(args.map(i => i == null ? 1 : i));
+  const stepCount = steps.length,
+    stepSum = steps.reduce((a, b) => a + b, 0);
+  if (stepSum === 0) { return result };
+  start = Math.max(
+    start == null && stepSum > 0 ? 0 :
+    start == null && stepSum < 0 ? len - 1 :
+    start >= len ? len - 1 :
+    start < 0 ? start + len :
+    start, 0);
+  stop = Math.max(
+    stop == null && stepSum > 0 ? len :
+    stop == null && stepSum < 0 ? -1 :
+    stop >= len ? len :
+    stop < 0 ? stop + len :
+    stop, -1);
+  for (
+    let i = start, counter = -1;
+    stepSum > 0 ? i < stop : i > stop;
+    i += steps[counter]
+  ) {
+    result.push(self[i]);
+    counter = (counter + 1) % stepCount;
+  };
+  return result;
+}
+function spread(self, startOrStop, span, splitsAndSpaces, ...args) {
+  const len = self.length, result = [];
+  if (span === 0 || len === 0) { return result };
+  splitsAndSpaces = (!splitsAndSpaces || splitsAndSpaces.length === 0 ? [1] :
+    typeof splitsAndSpaces === "number" ? [splitsAndSpaces] :
+    typeof splitsAndSpaces === "string" ? Array.from(splitsAndSpaces, Number) :
+    splitsAndSpaces).concat(args.map(i => i == null ? 1 : i));
+    const splitCount = splitsAndSpaces.length,
+    splitSpaceSum = splitsAndSpaces.reduce((a, b) => a + b, 0);
+  if (splitSpaceSum <= 0) { return result };
+  startOrStop = Math.max(
+    startOrStop == null && span > 0 || startOrStop == null && span == null ? 0 :
+    startOrStop == null || startOrStop > len && span < 0 ? len :
+    startOrStop < 0 ? startOrStop + len :
+    startOrStop, 0);
+  span = span == null || startOrStop + span > len ? len - startOrStop :
+    startOrStop + span < 0 ? -startOrStop: span;
+  const start = span > 0 ? startOrStop : startOrStop + span,
+    stop = span > 0 ? startOrStop + span : startOrStop;
+  for (let i = start, c = -1, arr = []; i < stop; i += splitsAndSpaces[c]) {
+    if ((c = (c + 1) % splitCount) % 2 === 0 && i + splitsAndSpaces[c] <= stop) {
+      if ((arr = Array.from({length: splitsAndSpaces[c]}, (_, j) => j + i).map(
+        index => self[index]).filter(item => item !== undefined)
+          ).length == splitsAndSpaces[c]) { result.push(arr) }
+    }
+  };
+  return result;
+}
 ```
 
 ##### Variables {.appendix}
@@ -1235,12 +1451,25 @@ schedules = [
   [[.38, .62], [.38, .62], [.38, .62], [.38, .62], [.38, .62]],
 ]
 dates = Array.from({length: 366}, (_, i) => i.toString().padStart(3, "0"))
+sliceArray = slice(dates, ...sliceString.split(":").map(i => i === "" ? null : Number(i)))
+spreadArray = [].concat(...spread(dates, ...decodeSpread(spreadString)))
 ```
 
 ##### Set values {.appendix}
 
 ```{ojs}
+//| output: false
 set(viewof intervals, schedules[schedule-2])
+set(viewof spreadString, setSpreadDotd(spreadDotd))
+set(viewof sliceString, setSliceDotd(sliceDotd))
+{
+  if (invertDotd ? !sliceOrSpread : sliceOrSpread) {
+    set(viewof sliceDotd, invert(togglePlot))
+  } else {
+    set(viewof spreadDotd, invert(togglePlot))
+  }
+}
+
 ```
 
 # Basic concepts {#sec-basics}
@@ -2987,7 +3216,7 @@ The Gregorian calendar has many more workdays, 260 in common years and 261 in le
 
 #### Pently schedules {#sec-pently}
 
-If necessary, the length of the workday and the number of workdays in the `dek` can be adjusted according to different schedules. As mentioned above, each half of the `dek` is called a `pent`. Each `pent` can have its own `pently` schedule. The expectation is that workers will work for 12 `dimes` per `pent`. It is possible to split those 12 `dimes` over the course of 5, 4, 3, or 2 days in each `pent`. @tbl-pently displays how the number of workdays and restdays in a `pent` affects the start time, end time, and duration of the workday. The different `pently` schedules are named after the number of workdays per `pent`. People can switch between `pently` schedules every `pent` as needed, but unless there is a compelling reason to follow a different `pently` schedule, everyone should follow the `Schedule` `3` by default. `Schedule` `3` has 3 workdays and 2 restdays in each `pent`. Each `Schedule` `3` workday starts at `Dot` `3`, ends at `Dot` `7`, and lasts 4 `dimes`.
+If necessary, the length of the workday and the number of workdays in the `dek` can be adjusted according to different schedules. As mentioned above, each half of the `dek` is called a `pent`. Each `pent` can have its own `pently` schedule. The expectation is that workers will work for 12 `dimes` per `pent`. It is possible to split those 12 `dimes` over the course of 5, 4, 3, or 2 days in each `pent`. @tbl-pently displays how the number of workdays and restdays in a `pent` affects the start time, end time, and duration of the workday. The different `pently` schedules are named after the number of workdays per `pent`. People can switch between `pently` schedules every `pent` as needed, but everyone should follow the `Schedule` `3` by default. `Schedule` `3` has 3 workdays and 2 restdays in each `pent`. Each `Schedule` `3` workday starts at `Dot` `3`, ends at `Dot` `7`, and lasts 4 `dimes`.
 
 #### @tbl-pently
 

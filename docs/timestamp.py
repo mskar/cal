@@ -2,7 +2,9 @@ def is_leap(y):
     return y % 4 == 0 and y % 100 != 0 or y % 400 == 0
 
 
-hex(10)[-1]
+list("ABCDEFGHIJKLMNOPQRSTUVWXYZabc")[55::0]
+[0, 1, 2, 3, 4, 5][::-2]
+
 
 
 def unix2doty(s=0, ms=0, precision=0):

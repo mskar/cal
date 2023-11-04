@@ -1,4 +1,49 @@
-function myStamp(date, offset = 0, dayOf = "y", sign = "+") {
+function spread(self, startOrStop, span, splitsAndSpaces, ...args) {
+  splitsAndSpaces = (!splitsAndSpaces || splitsAndSpaces.length === 0 ? [1] :
+    typeof splitsAndSpaces === "number" ? [splitsAndSpaces] :
+    typeof splitsAndSpaces === "string" ? Array.from(splitsAndSpaces, Number) :
+    splitsAndSpaces).concat(args);
+  const len = self.length,
+    result = [],
+    splitCount = splitsAndSpaces.length,
+    splitSpaceSum = splitsAndSpaces.reduce((a, b) => a + b, 0);
+  startOrStop = Math.max(
+    // use default start
+    startOrStop == null && span > 0 || startOrStop == null && span == null ? 0 :
+    // use default stop
+    startOrStop == null || startOrStop > len && span < 0 ? len :
+    // try to turn negative startOrStop to positive index
+    startOrStop < 0 ? startOrStop + len :
+    // if startOrStop is still negative, make it zero
+    startOrStop, 0);
+  // need to clip span if start + span > len
+  span = span == null || startOrStop + span > len ? len - startOrStop :
+    startOrStop + span < 0 ? startOrStop: span; 
+  // return [self, startOrStop, span, splitsAndSpaces]
+  // if (
+  //   span === 0 ||
+  //   splitSpaceSum === 0 ||
+  //   Math.sign(splitSpaceSum) !== Math.sign(span)
+  // ) { return result };
+  for (
+    let i = span > 0 ? startOrStop : startOrStop - span, counter = -1;
+    span > 0 ? i < startOrStop + span : i < startOrStop;
+    i += splitsAndSpaces[counter]) {
+    if (counter === -1 || counter % 2 === 0) { result.push(self[i]) };
+    counter = (counter + 1) % splitCount;
+  }
+  return result;
+}
+
+// //   const 
+// //   const n_splits = Math.floor(span / split_space) + (span % split_space >= split)
+// //   const stop = span + start
+// //   const result = [];
+// //     for (let i = start; span > 0 ? i < stop : i > stop; i += split_space) {
+// //       result.push(range(i, i + split));
+// //     }
+// //   return result;
+// // }function myStamp(date, offset = 0, dayOf = "y", sign = "+") {
     date = typeof date === "string" ? new Date(date) : date;
     const signOffset = offset < 0 ? "-" : "+";
     if (dayOf == "y") {
@@ -447,6 +492,59 @@ function deco2doty(timestamp = "1969+306.00000Z") {
         ? zone2hour(arr[2]) / 24
         : parseFloat(arr[2].replace(/([+-])/, "$1\."))];
 }
+
+function slice(self, start, stop, steps, ...args) {
+  const len = self.length, result = [];
+  if (steps === 0) { return result };
+  steps = (!steps || steps.length === 0 ? [1] :
+    typeof steps === "number" ? [steps] :
+    typeof steps === "string" ? Array.from(steps, Number) :
+    steps).concat(args);
+  const stepCount = steps.length,
+    stepSum = steps.reduce((a, b) => a + b, 0);
+  if (stepSum === 0) { return result };
+  start = Math.max(
+    start == null && stepSum > 0 ? 0 :
+    start == null && stepSum < 0 ? len - 1 :
+    start >= len ? len - 1 :
+    start < 0 ? start + len :
+    start, 0);
+  stop = Math.max(
+    stop == null && stepSum > 0 ? len :
+    stop == null && stepSum < 0 ? -1 :
+    stop >= len ? len :
+    stop < 0 ? stop + len :
+    stop, -1);
+  for (
+    let i = start, counter = -1;
+    stepSum > 0 ? i < stop : i > stop;
+    i += steps[counter]
+  ) {
+    result.push(self[i]);
+    counter = (counter + 1) % stepCount;
+  };
+  return result;
+}
+
+function slice(self, start, stop, step) {
+  const len = self.length,
+    result = [];
+  step = step || 1;
+  start = Math.max(
+    start == null ? step > 0 ? 0 : len - 1 :
+    start < 0 ? start + len :
+    start >= len ? len - 1 : start, 0)
+  stop = Math.max(
+    stop == null ? step > 0 ? len : -1 :
+    stop < 0 ? stop + len :
+    stop >= len ? len : stop, -1)
+  for (let i = start; step > 0 ? i < stop : i > stop; i += step) {
+    result.push(self[i]);
+  }
+  return result;
+}
+console.log(slice([0, 1, 2, 3, 4, 5], 7, -8, -2))
+console.log(slice([0, 1, 2, 3, 4, 5], 1, 8, 2))
 
 function doty2deco(year = 1969, doty = 306, zone = 0) {
     const yd = dote2doty(doty2dote(year, Math.floor(doty)));
